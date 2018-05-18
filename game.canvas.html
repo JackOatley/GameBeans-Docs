@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="funcs.js"></script>
+	</head>
+	
+	<body>
+	
+		<h1>GAME.canvas</h1>
+		
+		<p>The GAME.canvas object contains functions for dealing with canvases. Canvases, in HTML5, are what we use to render graphics. GameBeans' drawing functions draw to a canvas on the webpage, and this is how you see your game.</p>
+		
+		
+<!--
+-->
+<h3>GAME.canvas.create( options )</h3>
+<p>Creates and returns new canvas.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>options</b> - OPTIONAL. An object containing advanced parameters.</li>
+	<ul>
+		<li><b>width</b> - The width of the canvas. Defaults to 300.</li>
+		<li><b>height</b> - The height of the canvas. Defaults to 150.</li>
+	</ul>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// create a new canvas
+GAME.canvas.create({
+	width: 640,
+	height: 480
+});</code>
+
+
+<!--
+-->
+<h3>GAME.canvas.getMain()</h3>
+<p>Returns the canvas that is currently set to be GameBeans' main canvas (the one on the web page.)</p>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// get main canvas
+var mainCanvas = GAME.canvas.getMain();</code>
+
+
+<!--
+-->
+<h3>GAME.canvas.clear( canvas, color )</h3>
+<p>Clears the given canvas to the given color. This is done automatically for the main canvas at the start of the Draw Event.</p>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// clear the main canvas to red
+var mainCanvas = GAME.canvas.getMain();
+GAME.canvas.clear( mainCanvas, "#FF0000" );</code>
+
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>

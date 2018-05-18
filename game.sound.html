@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="funcs.js"></script>
+	</head>
+	
+	<body>
+	
+		<h1>GAME.sound</h1>
+		
+		<p>The GAME.sound object contains functions for dealing with sounds.</p>
+		
+		
+<h3>GAME.sound.play( snd, options )</h3>
+<p>Plays a sound. By default the sound will play just once, using the options object lets you set a sound to loop as well as other features!</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>snd</b> - The name or object of the sound to play.</li>
+	<li><b>options</b> - OPTIONAL. An object containing advanced options.
+	<ul>
+		<li><b>loop</b> - Whether the sound should loop when it ends.</li>
+		<li><b>onEnd</b> - A function to execute when the sound ends.</li>
+	</ul>
+	</li>
+</ul>
+<h4>Returns:</h4>
+<p>Audio Node - The audio node about to be played. HTML5 only allows a single audio node to be played at a time, due to this, GameBeans creates new nodes as needed. As such, the node returned may not always be the same one.</p>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// 1, 2... 1, 2, 3, 4!
+GAME.sound.play( "sndSickBeat", { loop: true } );
+
+// play an intro, leading to a loop
+GAME.sound.play( "sndIntro", {
+	onEnd: function() { GAME.sound.play( "sndMainLoop", { loop: true } ); }
+} );</code>
+
+
+<h3>GAME.sound.stop( snd )</h3>
+<p>Stops all instance of the given sound.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>snd</b> - The name or object of the sound to stop.</li>
+	</li>
+</ul>
+<h4>Returns:</h4>
+<p>Undefined.</p>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// start playung music
+GAME.sound.play( "sndMusic" );
+
+// in 10 seconds, stop the music
+setTimeout( function() {
+	GAME.sound.stop( "sndMusic" )
+}, 10 * 1000 );</code>
+
+
+<h3>GAME.sound.get( snd )</h3>
+<p>Returns the sound resource object from the given name. This object grants direct access to the audio nodes creates when playing the sound.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>snd</b> - The name of the sound to get the object of.</li>
+	</li>
+</ul>
+<h4>Returns:</h4>
+<p>Object - sound resource.</p>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// start playung music
+var soundObject = GAME.sound.get( "sndMusic" );</code>
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="funcs.js"></script>
+	</head>
+	
+	<body>
+	
+<h1>GAME.input</h1>
+<p>The GAME.input object contains functions for dealing with user input such as the keyboard and mouse.</p>
+		
+		
+<h3>GAME.input.mouse</h3>
+<p>This is an object that contains several properties that are updated in the background by GameBeans that lets you determine the current state of the mouse, such as clicks and poisition. Please note that the mouse position is not updated if the mouse cursor is outside the game window.</p>
+<h4>Properties:</h4>
+<ul>
+	<li><b>x</b> - X position of the mouse within the window.</li>
+	<li><b>y</b> - Y position of the mouse within the window.</li>
+	<li><b>pressed</b> - List of buttons just pressed.</li>
+	<li><b>down</b> - List of buttons being held down.</li>
+	<li><b>released</b> - List of buttons just released.</li>
+	<li><b>wheelUp</b> - Whether the wheel was just scrolled up, boolean.</li>
+	<li><b>wheelDown</b> - Whether the wheel was just scrolled down, boolean.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// print mouse position to screen
+GAME.draw.text( "mouse x = " + GAME.input.mouse.x, 320, 230 );
+GAME.draw.text( "mouse y = " + GAME.input.mouse.y, 320, 250 );</code>
+<h4>Further:</h4>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button</a>
+
+
+<h3>GAME.input.keyboard</h3>
+<p>This is an object that contains several properties that are updated in the background by GameBeans that lets you determine the current state of the keyboard keys. To check a certain key, supply the list relevant to the state you require, then supply the key code. For a reference of the different key codes see the link in the "Further" section below.</p>
+<h4>Properties:</h4>
+<ul>
+	<li><b>pressed</b> - List of keys just pressed.</li>
+	<li><b>down</b> - List of keys being held down.</li>
+	<li><b>released</b> - List of keys just released.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// get input
+if ( GAME.input.keyboard.down["ArrowUp"] )    this.y -= 1;
+if ( GAME.input.keyboard.down["ArrowDown"] )  this.y += 1;
+if ( GAME.input.keyboard.down["ArrowLeft"] )  this.x += 1;
+if ( GAME.input.keyboard.down["ArrowRight"] ) this.x -= 1;</code>
+<h4>Further:</h4>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code#Code_values" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code#Code_values</a>
+
+
+<h3>GAME.input.touch</h3>
+<p>This is an object that contains several properties that are updated in the background by GameBeans that lets you determine the current state of touches and poisitions. Each property of this object is an array, with the name being the state, and the index of the array being the index of the touch (or which finger in order pressed). Currently, only a single touch is handled, this is enough to mimic mouse support. Multi-touch support will be added in the future.</p>
+<h4>Properties:</h4>
+<ul>
+	<li><b>x</b> - X position of the touch within the window.</li>
+	<li><b>y</b> - Y position of the touch within the window.</li>
+	<li><b>start</b> - A new touch has started, similar to "mouse.pressed".</li>
+	<li><b>held</b> - A touch continues to be held, similar to "mouse.down".</li>
+	<li><b>move</b> - A touch has moved, internally this updates the touch position.</li>
+	<li><b>end</b> - A touch has ended, similar to "mouse.released".</li>
+	<li><b>cancel</b> - Currently the same as the "end" state.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// print touch position to screen
+GAME.draw.text( "touch x = " + GAME.input.touch.x[0], 320, 230 );
+GAME.draw.text( "touch y = " + GAME.input.touch.y[0], 320, 250 );</code>
+<h4>Further:</h4>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent</a>
+
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>

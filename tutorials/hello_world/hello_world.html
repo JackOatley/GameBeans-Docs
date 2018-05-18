@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="../../style.css">
+		<script src="../../funcs.js"></script>
+	</head>
+	
+	<body>
+	
+<h1>Hello, World!</h1>
+
+<p>In any tool or programming language, it's traditional to introduce it using a "Hello, World!" program. It's the easiest thing you could ever make, aside from nothing. Here, I'll show you a couple of ways of making this program, and introduce you the some of the basic concepts in GameBeans.</p>
+
+
+<h3>Create a new project</h3>
+<p>Firstly, create a new blank project. When you start GameBeans you will already have an empty project. If you already have another project loaded, you can create your new one by pressing the "New" button at the right of the taskbar (it looks like a star). You'll first be presented with an empty workspace and the "Settings" tab opened. We just want to dive in and get on with it though, so go ahead and open the "Resources" tab instead. The Resources tab is where we do most of the work on any project. In the Resources section you have a lot of different resource types to work with. For this program, we only need "Objects" and "Rooms". Objects are what control and represent things in our program. Rooms are where you put the Objects.</p>
+
+<h3>Create an object</h3>
+<p>To create an object, press the "Add Object" button on the Objects box in the Resources tab (it looks like a plus sign). This will create a new, blank, object and open it up in the workspace area. You'll also see a new set of tabs appear to the left of the workspace, these contain the Events and Actions that you add to Objects to make everything happen! By default, the left panel is opened on the "Actions" tab, usually this is helpful, but when you have a blank object, what we want is actually "Events", so go ahead and open that tab instead. There's a few events here, for now we're only interested in the "Create" event. The Create event is executed/run once, when the object is first created (who would have guessed?!). Click that event, and it will "attach" to and follow your cursor. With the event in your hand, move over to the workspace and you should see a "Add Event(s)" box appear, click on that and the event will be added to the object. Now we've created an event for our object, we're automatically put back onto the Actions tab. This is great, because we need actions now! There's a lot of choice here, though for this first program we only need one. You may need to scroll down the left panel to reach the "Debug" actions at the bottom. Once there click the "Alert" action and put it in the event in the box that should say "This event has no actions, add some!" You're object now has an action! It will contain some default text. You can edit that text to change it, so change it to "Hello, World!". That's it, our object is complete!</p>
+<figure>
+<img src="fig1.png"/>
+<figcaption>Your object should look like this.</figcaption>
+</figure>
+
+<h3>Create a room</h3>
+<p>Before our object can actually do anything, we need to create a room to put it in. So, back on the Resources tab to the right, in the "Rooms" section, click the "Add Room" button. This will create a new room and open it in the workspace. It should feel familiar to when editing the object; we have the properties at the top, and there's another panel on the left. However, this time there's a black rectangle in the middle! This is actually our room, it's empty right now. The left panel is slightly different, instead of Events and Actions, we have the Objects of our project, it's from here that we can place them in the room. You should see the object you just created. You can click an object from here and move it into the workspace/room. So go ahead and do that. Where you place it in the room will usually matter, but for this tutorial it's not important, you can just place the object in the middle of the room. You only need the one object, so if you accidentally make a few in your excitement then you can remove them again by just clicking them.</p>
+
+<h3>Run it!</h3>
+<p>That's pretty much it, our project can now run! To do this, click the "Run" button on the taskbar (looks like your typical play arrow). If everything worked, then you should see a browser "alert" pop up, showing the text you entered in the Action before. This isn't very elegant, we can do a little better.<p>
+
+<h3>Doing it better</h3>
+<p>Lets stick with what we already got, and just change a couple things. Go back to your object and delete the create event we added before. In it's place: Add a "Draw" events, and to that add a "Draw Text" action. This action takes a few parameters. The first is the text to show, funnily enough this defaults to "Hello, World!", so we're sorted there. The other two parameters are "x" and y", and this represent the position in the room to draw the text. For now, set these to 320 and 240 (the center of our room). Now run it again.<p>
+<figure>
+<img src="fig2.png"/>
+<figcaption>After the changes, your object should look like this.</figcaption>
+</figure>
+
+<h3>Final touch</h3>
+<p>Well, our program functions as expected, but the text isn't quite PERFECT. We can change this. Go to actions again and find the "Set Font" action. Place it in the event just before the "Draw Text" action. You can play with the parameters, but what we want here is "align" set to "center" and "baseline" set to "middle", these determine the horizontal and vertical alignment respectively. You can now run it again, and it should be nice and perfectly positioned!<p>
+<figure>
+<img src="fig3.png"/>
+<figcaption>After the changes, your object should look something like this.</figcaption>
+</figure>
+
+</body>
+</html>

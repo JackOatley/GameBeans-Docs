@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="funcs.js"></script>
+	</head>
+	
+	<body>
+	
+<h1>GAME.draw.shape</h1>
+<p>The GAME.draw.shape object contains functions for drawing shapes.</p>
+		
+
+<!--
+-->	
+<h3>GAME.draw.shape.line( x1, y1, x2, y2, options )</h3>
+<p>Draws a line between the given coordinates.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>x1</b> - The X position of the first point.</li>
+	<li><b>y1</b> - The Y position of the first point.</li>
+	<li><b>x2</b> - The X position of the second point.</li>
+	<li><b>y2</b> - The Y position of the second point.</li>
+	<li><b>options</b> - OPTIONAL parameters.</li>
+	<li><ul>
+		<li><b>color</b> - The color of the line, defaults to global drawing color.</li>
+	</ul></li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// draw a red line from a to b
+GAME.draw.shape.line( z.x, z.y, b.x, b.y, {
+	color: "#FF0000"
+});</code>
+
+
+<!--
+-->	
+<h3>GAME.draw.shape.ellipse( x, y, xr, yr, options )</h3>
+<p>Draws elliptical shapes, like ovals and circles.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>x</b> - The X position.</li>
+	<li><b>y</b> - The Y position.</li>
+	<li><b>xr</b> - The X radius.</li>
+	<li><b>yr</b> - The Y radius.</li>
+	<li><b>options</b> - OPTIONAL object with advanced parameters.</li>
+	<li><ul>
+		<li><b>color</b> - The color of the ellipse, defaults to global drawing color.</li>
+		<li><b>fill</b> - Should the ellipse be filled or stroked.</li>
+		<li><b>lineWidth</b> - The width of the stroke, if stroke is used.</li>
+		<li><b>healthbar</b> - OPTIONAL object for using the shape as a healthbar.</li>
+		<li><ul>
+			<li><b>amount</b> - Fraction representing the amount the healthbar should be filled, with 0 being empty and 1 being full.</li>
+			<li><b>color</b> - The main color, defaults to green.</li>
+			<li><b>background</b> - The background color, defaults to red.</li>
+		</ul></li>
+	</ul></li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// draw a healthbar
+GAME.draw.shape.ellipse( 320, 240, 100, 50, {
+    healthbar: {
+        amount: this.health / this.maxHealth,
+        color: "#FFFFFF",
+        background: "#000000"
+    }
+} );</code>
+
+
+<!--
+-->	
+<h3>GAME.draw.shape.rectangle( x, y, w, h, options )</h3>
+<p>Draws elliptical shapes, like ovals and circles.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>x</b> - The X position.</li>
+	<li><b>y</b> - The Y position.</li>
+	<li><b>w</b> - The width.</li>
+	<li><b>h</b> - The height.</li>
+	<li><b>options</b> - OPTIONAL object with advanced parameters.</li>
+	<li><ul>
+		<li><b>color</b> - The color of the ellipse, defaults to global drawing color.</li>
+		<li><b>fill</b> - Should the ellipse be filled or stroked.</li>
+		<li><b>lineWidth</b> - The width of the stroke, if stroke is used.</li>
+		<li><b>healthbar</b> - OPTIONAL object for using the shape as a healthbar.</li>
+		<li><ul>
+			<li><b>amount</b> - Fraction representing the amount the healthbar should be filled, with 0 being empty and 1 being full.</li>
+			<li><b>color</b> - The main color, defaults to green.</li>
+			<li><b>background</b> - The background color, defaults to red.</li>
+		</ul></li>
+	</ul></li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// draw a healthbar
+GAME.draw.shape.rectangle( 92, 28, 322, 10, {
+    healthbar: {
+        amount: this.health / this.maxHealth,
+        color: "#FFFFFF",
+        background: "#000000"
+    }
+} );</code>
+
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>

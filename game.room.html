@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="funcs.js"></script>
+	</head>
+	
+	<body>
+	
+		<h1>GAME.room</h1>
+		
+		<p>The GAME.room object contains functions for dealing with rooms.</p>
+		
+
+<!--
+-->
+<h3>GAME.room.enter( room )</h3>
+<p>Goes to the given room.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>room</b> - The name or object of the room to go to.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// go to another room
+GAME.room.enter( "rmLevel2" );</code>
+
+
+<!--
+-->
+<h3>GAME.room.get( room )</h3>
+<p>Returns the resource object of the current room by it's name. With this object you can access various properties of the room, and even change them directly. Care needs to be taken when dealing with resource objects directly.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>room</b> - The name of the room to get.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// get current room size
+var room = GAME.room.get( "rmLevel2" );
+var width = room.width;
+var height = room.height;
+</code>
+
+
+<!--
+-->
+<h3>GAME.room.create( name, width, height )</h3>
+<p>Create a new room.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>name</b> - The name of the new room. This should be unique.</li>
+	<li><b>width</b> - The width of the new room.</li>
+	<li><b>height</b> - The height of the new room.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// create a new room
+var newRoom = GAME.room.create( "rmNewRoom", 640, 480 );
+</code>
+
+
+<!--
+-->
+<h3>GAME.room.setBackground( room, sprite )</h3>
+<p>Sets the sprite to use as the background from the given room.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>room</b> - The room to change the background of.</li>
+	<li><b>sprite</b> - The sprite to use as the background.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// change the background
+var room = GAME.room.current;
+GAME.room.setBackground( room, "sprBackground2" );
+</code>
+
+
+<!--
+-->
+<h3>GAME.room.addInstance( room, object, x, y )</h3>
+<p>Add an instance of the given object to a room.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>room</b> - The room.</li>
+	<li><b>object</b> - The object to create an instance of.</li>
+	<li><b>x</b> - The X position to create the instance.</li>
+	<li><b>y</b> - The Y position to create the instance.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// create a new room, add an instance, then enter the room
+var newRoom = GAME.room.create( "rmNewRoom", 640, 480 );
+GAME.room.addInstance( "rmNewRoom", "objPlayer", 320, 240 );
+GAME.room.enter( "rmNewRoom" );
+</code>
+
+<!--
+-->
+<h3>GAME.room.draw( room )</h3>
+<p>Draws the given room. Currently, this only means it's background. This is done automatically for the room you're in. But for whatever reason if you want to re-draw it or draw a different room in the current one, then you can with this function.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>room</b> - The room to draw.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// draw the room
+GAME.room.draw( "rmNewRoom" );
+</code>
+
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>

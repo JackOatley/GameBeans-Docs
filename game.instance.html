@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="funcs.js"></script>
+	</head>
+	
+	<body>
+	
+<h1>GAME.instance</h1>
+		
+<p>The GAME.instance object contains functions for dealing with instances. For creating them, manipulating them and destroying them.</p>
+		
+
+<!--
+-->		
+<h3>GAME.instance.create( object, x, y )</h3>
+<p>Creates a new instance of an object.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>object</b> - The name, as a string, of the object of which to create an instance of.</li>
+	<li><b>x</b> - The X position, as a number, to create the instance.</li>
+	<li><b>y</b> - The Y position, as a number, to create the instance.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// create the player in the middle of the room
+GAME.instance.create( "objPlayer", 320, 240 );</code>
+		
+
+<!--
+-->		
+<h3>GAME.instance.createMoving( object, x, y, speed, direction )</h3>
+<p>Creates a new instance of an object, and starts it moving at speed in a direction.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>object</b> - The name, as a string, of the object of which to create an instance of.</li>
+	<li><b>x</b> - The X position, as a number, to create the instance.</li>
+	<li><b>y</b> - The Y position, as a number, to create the instance.</li>
+	<li><b>speed</b> - The speed, as a number, at which the instance shall move.</li>
+	<li><b>direction</b> - The direction in degrees, as a number, in which the instance shall move.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// create the player in the middle of the room
+// and zoom away!
+GAME.instance.createMoving( "objPlayer", 320, 240, 10, 90 );</code>
+
+
+<!--
+-->
+<h3>GAME.instance.destroy( inst )</h3>
+<p>Destroys the given instance.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>inst</b> - The instance object to be destroyed. This parameter can also be the <span class="gb-green">this</span> keyword, or the string "other" in the case of a collision event.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// destroy the calling instance
+GAME.instance.destroy( this );
+
+// destroy the other instance in a collision event
+GAME.instance.destroy( "other" );
+
+// destroy the first found instance of the given object
+var inst = GAME.instance.find( "objSomeObject", 0 );
+GAME.instance.destroy( inst );</code>
+
+
+<!--
+-->
+<h3>GAME.instance.count( object )</h3>
+<p>Returns the number of instances of the given object that currently exist.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>object</b> - An object, as a string.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// How many instances are there?
+var count = GAME.instance.count( "objSomeObject" );
+console.log( "Number of instances: " + count )</code>
+
+
+<!--
+-->
+<h3>GAME.instance.mouseOn( inst )</h3>
+<p>Returns true if the mouse is over the given instance.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>inst</b> - The instance to check.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// hovering...
+if ( GAME.instance.mouseOn( this ) ) {
+	console.log( "hovering..." );
+}</code>
+
+
+<!--
+-->
+<h3>GAME.instance.find( object, index )</h3>
+<p>Finds and returns the Nth instance of an object.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>object</b> - The object, as a string, to find an instance of.</li>
+	<li><b>index</b> - The index, as an integer, of the instance.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// find the first instance of the object and log it's position in the browser console
+var inst = GAME.instance.find( "objSomeObject", 0 );
+console.log( inst.x, inst.y )</code>
+
+<!--
+-->
+<h3>GAME.instance.findRandom( object )</h3>
+<p>Finds and returns any instance of an object.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>object</b> - The object, as a string, to find an instance of.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// find any instance of the object and log it's position in the browser console
+var inst = GAME.instance.findRandom( "objSomeObject" );
+console.log( inst.x, inst.y )</code>
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>
