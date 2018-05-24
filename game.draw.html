@@ -153,13 +153,27 @@ GAME.draw.setImageSmoothing( true );</code>
 	<ul>
 		<li><b>stroke</b> - Whether to draw stroked text.</li>
 		<li><b>strokeColor</b> - The color of stroked text.</li>
-		<li><b>width</b> - The width of stroked text</li>
+		<li><b>width</b> - The width of stroked text.</li>
+		<li><b>pattern</b> - A text rendering "pattern". This is useful for "type-writer" style text.</li>
+		<ul>
+			<li><b>start</b> - The index of the first character of the string to display, character before this are invisible.</li>
+			<li><b>end</b> - The index of the last character of the string to display, character before this are invisible.</li>
+		</ul>
 	</ul>
 	</li>
 </ul>
 <h4 onclick="showExample(this)" class="show-toggle">Example</h4>
-<code class="prettyprint">// say howdy
-GAME.draw.text( "Howdy, World!", 320, 240 );</code>
+<code class="prettyprint">// Say howdy
+GAME.draw.text("Howdy, World!", 320, 240);
+
+// Using a pattern
+// displays as "  wdy, Wor   "
+GAME.draw.text("Howdy, World!", 320, 240, {
+	pattern: {
+		start: 2,
+		end: 10
+	}
+});</code>
 
 
 <!--
