@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="funcs.js"></script>
+	</head>
+	
+	<body>
+	
+		<h1>GAME.Transition</h1>
+		
+		<p>GAME.Transition is a class object, and so is used as a constructor. A transition is split into 2 phases; "in" and "out". At the end of the "in" phase, if the transition has a callback it will be executed, then the "out" phase begins. At the end of the "out" phase, the transition is destroyed.</p>
+		
+
+<!--
+-->
+<h3>GAME.Transition( options )</h3>
+<p>Starts a transition.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>options</b> - OPTIONAL. You can use any, all or none of these parameters.</li>
+		<ul>
+		<li><b>type</b> - The type of the transition.</li>
+		<li><b>time</b> - The time, in game steps, that the transition should last in each phase.</li>
+		<li><b>color</b> - The color passed into the rendering function.</li>
+		<li><b>callback</b> - The function to execute at the mid-pont of the transition.</li>
+		<li><b>prefab</b> - A previously created object that overwrites provided parameters.</li>
+		</ul>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// Go to another room
+new GAME.Transition({
+	type: "fade",
+	time: 60,
+	callback: function() {
+		GAME.room.enter("rmLevel12");
+	}
+});</code>
+
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>
