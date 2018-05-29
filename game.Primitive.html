@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="funcs.js"></script>
+	</head>
+	
+	<body>
+	
+		<h1>GAME.Primitive</h1>
+		
+		<p>GAME.Primitive is a class object, and so is used as a constructor. A Primitive is a shape made up of a series of points (vertexes), that contain position and UV data.</p>
+		
+
+<!--
+-->
+<h3>GAME.Primitive( options )</h3>
+<p>Creates a Primitive instance.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>options</b> - OPTIONAL.</li>
+		<ul>
+		<li><b>points</b> - An array of points that make up the primitive.</li>
+		<li><b>texture</b> - A Sprite resource as an object or string name.</li>
+		<li><b>color</b> - The color (in absense of a texture) of the primitive.</li>
+		<li><b>format</b> - The format of the array of points.</li>
+		<li><b>modifier</b> - A modifier function that can be used to effect the points during drawing.</li>
+		<li><b>x</b> - X position of the whole primitive.</li>
+		<li><b>y</b> - Y position of the whole primitive.</li>
+		</ul>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// Create primitive from data
+this.shape = new GAME.Primitive({
+	texture: "sprTexture",
+	format: "quads",
+	points: points,
+	modifier: modifier
+});</code>
+
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>
