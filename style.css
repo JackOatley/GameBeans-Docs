@@ -67,6 +67,17 @@ code {
 	font-weight: bold;
 }
 
+.constructor, .method, .static {
+	padding: 4px 8px;
+	margin: 0px 4px 0px 0px;
+	font-size: 80%;
+	color: #FFFFFF;
+	border-radius: 10px;
+}
+.constructor { background: #FF6666; }
+.method { background: #FFC500; }
+.static { background: #C06FFF; }
+
 #main {
 	display: flex;
 	position: absolute;

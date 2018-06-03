@@ -44,6 +44,7 @@
 				<p onclick="openPage('game.room')">GAME.room</p>
 				<p onclick="openPage('game.sound')">GAME.sound</p>
 				<p onclick="openPage('game.sprite')">GAME.sprite</p>
+				<p onclick="openPage('game.Tilemap')">GAME.Tilemap</p>
 				<p onclick="openPage('game.Transition')">GAME.Transition</p>
 				
 			</div>
@@ -55,8 +56,8 @@
 		</div>
 		
 		<script>
-			var frame = document.getElementById( "page-frame" );
-			function openPage( page ) {
+			var frame = document.getElementById("page-frame");
+			function openPage(page) {
 				frame.src = page + ".html";
 			}
 			openPage('overview/introduction');
