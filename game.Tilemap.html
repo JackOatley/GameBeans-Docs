@@ -16,10 +16,8 @@
 
 <!--
 -->
-<h3>
-	<span class="constructor">Constructor</span>
-	GAME.Tilemap( options )
-</h3>
+<h3>GAME.Tilemap( options )</h3>
+<p><span class="constructor">Constructor</span></p>
 <p>Creates a new tilemap.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -38,7 +36,7 @@
 <h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Setup tilemap
 global.tilemap = new GAME.Tilemap({
-	atlas: "sprTiles",
+	atlas: sprTiles,
 	tileWidth: 16,
 	tileHeight: 16,
 	tileOverlay: 4,
@@ -50,15 +48,13 @@ global.tilemap = new GAME.Tilemap({
 
 <!--
 -->
-<h3>
-	<span class="static">Static</span>
-	GAME.Tilemap.create( options )
-</h3>
+<h3>GAME.Tilemap.create( options )</h3>
+<p><span class="static">Static</span></p>
 <p>See Constructor for details.</p>
 <h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Setup tilemap
 global.tilemap = GAME.Tilemap.create({
-	atlas: "sprTiles",
+	atlas: sprTiles,
 	tileWidth: 16,
 	tileHeight: 16,
 	tileOverlay: 4,
@@ -70,11 +66,8 @@ global.tilemap = GAME.Tilemap.create({
 
 <!--
 -->
-<h3>
-	<span class="method">Method</span>
-	<span class="static">Static</span>
-	GAME.Tilemap.set( layer, x, y, index )
-</h3>
+<h3>GAME.Tilemap.set( layer, x, y, index )</h3>
+<p><span class="method">Method</span><span class="static">Static</span></p>
 <p>Sets a cell in a Tilemap.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -93,11 +86,8 @@ GAME.Tilemap.set(global.tilemap, "ground", 5, 5, 18);</code>
 
 <!--
 -->
-<h3>
-	<span class="method">Method</span>
-	<span class="static">Static</span>
-	GAME.Tilemap.draw( options )
-</h3>
+<h3>GAME.Tilemap.draw( options )</h3>
+<p><span class="method">Method</span><span class="static">Static</span></p>
 <p>Draw the Tilemap. An area of the Tilemap can be specified allowing easy selective rendering, though typically this will be the same as the camera viewing area.</p>
 <h4>Parameters:</h4>
 <ul>

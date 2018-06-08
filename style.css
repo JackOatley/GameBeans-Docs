@@ -17,6 +17,7 @@ h1 {
 
 h3 {
 	margin-top: 32px;
+	margin-bottom: 8px;
 	color: #85D100;
 }
 
@@ -70,7 +71,8 @@ code {
 .constructor, .method, .static {
 	padding: 4px 8px;
 	margin: 0px 4px 0px 0px;
-	font-size: 80%;
+	font-size: 60%;
+	font-weight: bold;
 	color: #FFFFFF;
 	border-radius: 10px;
 }
