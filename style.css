@@ -1,6 +1,6 @@
 
 body {
-	font-family: 'Verdana';
+	font-family: Verdana, sans-serif; font-size: 80%;
 	font-size: 90%;
 	line-height: 150%;
 	background: #FFFFFF;
@@ -51,6 +51,10 @@ code {
 	padding: 16px;
 	background: #F6F6F6;
 	white-space: pre;
+}
+
+code.show {
+	display: block;
 }
 
 .gb-blue {
