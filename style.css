@@ -16,6 +16,11 @@ h1 {
 	color: #65A7FF;
 }
 
+h2 {
+	font-weight: normal;
+	color: #555555;
+}
+
 h3 {
 	margin-top: 32px;
 	margin-bottom: 8px;
@@ -33,6 +38,7 @@ ul {
 
 a {
 	text-decoration: none;
+	color: #65A7FF;
 }
 
 .show-toggle {

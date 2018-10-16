@@ -6,19 +6,27 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="funcs.js"></script>
 	</head>
-	
+
 	<body>
-	
-		<h1>GAME.Grid</h1>
-		
-		<p>GAME.Grid is a constructable class object. A Grid can be used to store
-		and retrieve any data in a two-dimensional grid structure..</p>
-		
+
+<h1>GAME.Grid</h1>
+<p>GAME.Grid is a constructable class object. A Grid can be used to store and retrieve any data in a two-dimensional grid structure..</p>
+
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#constructor">GAME.Grid()</a></li>
+	<li><a href="#create">GAME.Grid.create</a></li>
+	<li><a href="#get">GAME.Grid.get</a></li>
+	<li><a href="#set">GAME.Grid.set</a></li>
+	<li><a href="#add">GAME.Grid.add</a></li>
+	<li><a href="#multiply">GAME.Grid.multiply</a></li>
+	<li><a href="#clear">GAME.Grid.clear</a></li>
+	<li><a href="#destroy">GAME.Grid.destroy</a></li>
+</ul>
 
 <!--
 -->
-<h3>GAME.Grid( width, height, options )</h3>
-<p><span class="constructor">Constructor</span></p>
+<h3 id="constructor">GAME.Grid(width, height, options)</h3>
 <p>Creates a new tilemap.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -38,8 +46,7 @@ var myGrid = new GAME.Grid(64, 64, {
 
 <!--
 -->
-<h3>GAME.Grid.create( width, height, options )</h3>
-<p><span class="static">Static</span></p>
+<h3 id="create">GAME.Grid.create(width, height, options)</h3>
 <p>See Constructor for details.</p>
 <h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Create a new grid with every cell set to 10
@@ -50,8 +57,7 @@ var myGrid = new GAME.Grid.create(64, 64, {
 
 <!--
 -->
-<h3>GAME.Grid.get( x, y )</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="get">GAME.Grid.get(x, y)</h3>
 <p>Gets the value of the grid cell at the given position.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -67,8 +73,7 @@ var myVal = GAME.Grid.get(myGrid, 16, 32);</code>
 
 <!--
 -->
-<h3>GAME.Grid.set( x, y, value )</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="set">GAME.Grid.set(x, y, value)</h3>
 <p>Sets the value of the grid cell at the given position.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -85,8 +90,7 @@ GAME.Grid.set(myGrid, 16, 32, 20);</code>
 
 <!--
 -->
-<h3>GAME.Grid.add( x, y, value )</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="add">GAME.Grid.add(x, y, value)</h3>
 <p>Adds the given value to the value of the grid cell at the given position.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -104,8 +108,7 @@ GAME.Grid.add(myGrid, 16, 32, 20); // And 60</code>
 
 <!--
 -->
-<h3>GAME.Grid.multiply( x, y, value )</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="multiply">GAME.Grid.multiply(x, y, value)</h3>
 <p>Multiplies the given value to the value of the grid cell at the given position.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -123,8 +126,7 @@ GAME.Grid.multiply(myGrid, 16, 32, 2); // And 160</code>
 
 <!--
 -->
-<h3>GAME.Grid.clear( value )</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="clear">GAME.Grid.clear(value)</h3>
 <p>Clears every cell in the grid to the given value.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -141,8 +143,7 @@ GAME.Grid.clear(myGrid, 0);</code>
 
 <!--
 -->
-<h3>GAME.Grid.destroy()</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="destroy">GAME.Grid.destroy()</h3>
 <p>Destroys the grid, allowing the memory to be reused.</p>
 <h4>Parameters:</h4>
 <ul>

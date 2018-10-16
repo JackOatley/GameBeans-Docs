@@ -15,10 +15,23 @@
 GAME.sprite.create({ name: "sprMySprite" });
 GAME.sprite.addFrame("sprMySprite", { src: "link.to/image.png" });</code>
 
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#create">GAME.sprite.create</a></li>
+	<li><a href="#addFrame">GAME.sprite.addFrame</a></li>
+	<li><a href="#setOrigin">GAME.sprite.setOrigin</a></li>
+	<li><a href="#tint">GAME.sprite.tint</a></li>
+	<li><a href="#fade">GAME.sprite.fade</a></li>
+	<li><a href="#restore">GAME.sprite.restore</a></li>
+	<li><a href="#cache">GAME.sprite.cache</a></li>
+	<li><a href="#toCanvas">GAME.sprite.toCanvas</a></li>
+	<li><a href="#getPixel">GAME.sprite.getPixel</a></li>
+	<li><a href="#get">GAME.sprite.get</a></li>
+</ul>
 
 <!--
 -->
-<h3>GAME.sprite.create(options)</h3>
+<h3 id="create">GAME.sprite.create(options)</h3>
 <p>
 Creates a new sprite resource. This function is still very much a WIP, and is
 mainly for internal use.</p>
@@ -38,7 +51,7 @@ mainly for internal use.</p>
 
 <!--
 -->
-<h3>GAME.sprite.addFrame(sprite, options)</h3>
+<h3 id="addFrame">GAME.sprite.addFrame(sprite, options)</h3>
 <p>
 Adds a frame to an existing Sprite resource. This function is still very much a
 WIP, and is mainly for internal use.</p>
@@ -62,7 +75,7 @@ WIP, and is mainly for internal use.</p>
 
 <!--
 -->
-<h3>GAME.sprite.setOrigin(sprite, x, y)</h3>
+<h3 id="setOrigin">GAME.sprite.setOrigin(sprite, x, y)</h3>
 <p>Sets the origin position of the sprite.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -77,7 +90,7 @@ GAME.sprite.setOrigin(sprPlayer, 0, 0);</code>
 
 <!--
 -->
-<h3>GAME.sprite.tint(spr, col)</h3>
+<h3 id="tint">GAME.sprite.tint(spr, col)</h3>
 <p>
 Tints the sprite with a given color. This directly overwrites the sprite image.
 This multiplies the source color with the sprite destination colors.
@@ -94,7 +107,7 @@ GAME.sprite.tint(sprPlayer, "#FFFFFF");</code>
 
 <!--
 -->
-<h3>GAME.sprite.fade(spr, col)</h3>
+<h3 id="fade">GAME.sprite.fade(spr, col)</h3>
 <p>
 Fades the sprite with a given color (including alpha). This directly
 overwrites the sprite image. This fades out the sprite to the given color,
@@ -117,7 +130,7 @@ GAME.sprite.fade(sprPlayer, {
 });</code>
 
 
-<h3>GAME.sprite.restore(spr, col)</h3>
+<h3 id="restore">GAME.sprite.restore(spr, col)</h3>
 <p>
 Restores the sprite to it original state, reverting any changes such as tint or
 fade.
@@ -131,7 +144,7 @@ sprPlayer.restore(); // Or as a method.</code>
 
 <!--
 -->
-<h3>GAME.sprite.cache(sprite, options)</h3>
+<h3 id="cache">GAME.sprite.cache(sprite, options)</h3>
 <p>
 This is a useful function for optimisation. If using SVGs in your project,
 running this function with them will change them to bitmaps internally, which
@@ -159,14 +172,47 @@ GAME.sprite.cache(svgStar, {
 
 <!--
 -->
-<h3>GAME.sprite.get(sprite)</h3>
+<h3 id="toCanvas">GAME.sprite.toCanvas(sprite)</h3>
+<p>Returns a new Canvas with the Sprite drawn to it.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>sprite</b> - Sprite resource or name.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// Get canvas of sprite.
+var spriteCanvas = GAME.sprite.toCanvas(sprPlayer); // Static function.
+var spriteCanvas = sprPlayer.toCanvas(); // Method.</code>
+
+
+<!--
+-->
+<h3 id="getPixel">GAME.sprite.getPixel(sprite, index, x, y)</h3>
+<p>
+Returns an ArrayBuffer containing the RGBA components of the pixel of the sprite at the given X and Y. The returned ArrayBuffer is structured like so: [R, G, B, A].
+</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>sprite</b> - Sprite resource or name.</li>
+	<li><b>index</b> - Sub-image index.</li>
+	<li><b>x</b> - Pixel x coord.</li>
+	<li><b>y</b> - Pixel y coord.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">// Get a pixel's color.
+var color = GAME.sprite.getPixel(sprPlayer, 0, 16, 16); // Static function.
+var color = sprPlayer.getPixel(0, 16, 16); // Method.</code>
+
+
+<!--
+-->
+<h3 id="get">GAME.sprite.get(sprite)</h3>
 <p>Returns the actual resource object of the sprite with the given name.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>sprite</b> - Sprite name, string.</li>
+	<li><b>sprite</b> - Sprite resource or name.</li>
 </ul>
 <h4 onclick="showExample(this)" class="show-toggle">Example</h4>
-<code class="prettyprint">// get it
+<code class="prettyprint">// Get it.
 var spriteObject = GAME.sprite.get("sprPlayer");</code>
 
 
