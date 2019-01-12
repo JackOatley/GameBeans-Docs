@@ -5,15 +5,15 @@
 	<head>
 		<link rel="stylesheet" href="style.css">
 	</head>
-	
+
 	<body>
-	
+
 		<div id="main">
-		
+
 			<div id="contents">
-			
+
 				<a href="http://gamebeans.io/"><h1>Gamebeans.io</h1></a>
-			
+
 				<h3>Overview:</h3>
 				<p onclick="openPage('overview/introduction')">GameBeans Introduction</p>
 				<p onclick="openPage('overview/layout')">Understanding The Layout</p>
@@ -24,7 +24,7 @@
 				<p onclick="openPage('overview/actions')">Actions</p>
 				<p onclick="openPage('overview/sprites')">Sprites</p>
 				<p onclick="openPage('overview/sounds')">Sounds</p>
-				
+
 				<h3>Quickstart Guides:</h3>
 				<p onclick="openPage('tutorials/hello_world/hello_world')">Hello, World!</p>
 				<h3>Code Reference:</h3>
@@ -37,6 +37,7 @@
 				<p onclick="openPage('game.draw')">GAME.draw</p>
 				<p onclick="openPage('game.draw.shape')">GAME.draw.shape</p>
 				<p onclick="openPage('game.draw.transform')">GAME.draw.transform</p>
+				<p onclick="openPage('game.Font')">GAME.Font</p>
 				<p onclick="openPage('game.grid')">GAME.Grid</p>
 				<p onclick="openPage('game.instance')">GAME.instance</p>
 				<p onclick="openPage('game.input')">GAME.input</p>
@@ -48,15 +49,15 @@
 				<p onclick="openPage('game.sprite')">GAME.sprite</p>
 				<p onclick="openPage('game.Tilemap')">GAME.Tilemap</p>
 				<p onclick="openPage('game.Transition')">GAME.Transition</p>
-				
+
 			</div>
-			
+
 			<div id="page">
 				<iframe id="page-frame"></iframe>
 			</div>
-			
+
 		</div>
-		
+
 		<script>
 			var frame = document.getElementById("page-frame");
 			function openPage(page) {
@@ -64,7 +65,7 @@
 			}
 			openPage('overview/introduction');
 		</script>
-		
+
 	</body>
 
 </html>

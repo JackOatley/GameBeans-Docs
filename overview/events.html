@@ -5,21 +5,22 @@
 	<head>
 		<link rel="stylesheet" href="../style.css">
 	</head>
-	
+
 	<body>
-	
+
 		<h1>Events</h1>
-		
+
 		<p>
 		Events are a group of actions within an Object that execute at a particular time.
 		Events can range from game loop moments like Step and Draw, to inputs and collisions between Objects.
 		</p>
-		
+
 		<h4>Events:</h4>
 		<p>These are the events, in their logical categories, currently available.</p>
 		<ul>
 			<li><b>Game</b><ul>
 				<li><b>Create</b> - Executed when a new instance of the Object is created.</li>
+				<li><b>Destroy</b> - Executed when the instance is destroyed via the Destroy action.</li>
 				<li><b>Step</b> - Executed within the game logic loop, by default this should execute 60 times a second.</li>
 				<li><b>Draw</b> - Used for drawing. Executed when a new frame is about to be rendered, as such this event can run a variable number of times a second so it should not be used for game logic!</li>
 				<li><b>Collision</b> - Executed when the current instance collides with another instance of a given a Object.</li>
@@ -34,7 +35,7 @@
 				<li><b>Resize</b> - Executed when the window/browser resizes.</li>
 			</ul></li>
 		</ul>
-		
+
 	</body>
 
 </html>
