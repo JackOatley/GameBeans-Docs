@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="funcs.js"></script>
+	</head>
+
+	<body>
+
+<h1>GAME.Vector2</h1>
+<p>GAME.Grid is a constructable class object. A Grid can be used to store and retrieve any data in a two-dimensional grid structure..</p>
+
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#constructor">GAME.Vector2()</a></li>
+	<li><a href="#set">GAME.Vector2.set</a></li>
+	<li><a href="#copy">GAME.Vector2.copy</a></li>
+	<li><a href="#add">GAME.Vector2.add</a></li>
+	<li><a href="#mul">GAME.Vector2.mul</a></li>
+	<li><a href="#div">GAME.Vector2.div</a></li>
+</ul>
+
+<!--
+-->
+<h3 id="constructor">GAME.Vector2(x, y)</h3>
+<p>Creates a new Vector2.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>x</b> - X component of the vector.</li>
+	<li><b>y</b> - Y component of the vector.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">var point = new GAME.Vector2(25, 50);</code>
+
+
+<!--
+-->
+<h3 id="set">GAME.Vector2.set(vec, x, y)</h3>
+<p>Sets the values of the given vector.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>vec</b> - The Vector2.</li>
+	<li><b>x</b> - X component of the vector.</li>
+	<li><b>y</b> - Y component of the vector.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">GAME.Vector2.set(point, 12, 34);
+// or...
+point.set(12, 34);</code>
+
+
+<!--
+-->
+<h3 id="copy">GAME.Vector2.copy(vec1, vec2)</h3>
+<p>Copies the values of vec2 into vec1.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>vec1</b> - The vector to the receive the copy.</li>
+	<li><b>vec2</b> - THe vector to have it's values copied.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">GAME.Vector2.copy(vec1, vec2);
+// or...
+vec1.copy(vec2);</code>
+
+<!--
+-->
+<h3 id="add">GAME.Vector2.add(vec1, vec2)</h3>
+<p>Adds the values of vec2 to the values of vec1.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>vec1</b> - The first vector.</li>
+	<li><b>vec2</b> - The second vector.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">GAME.Vector2.add(vec1, vec2);
+// or...
+vec1.add(vec2);</code>
+
+<!--
+-->
+<h3 id="mul">GAME.Vector2.mul(vec1, vec2)</h3>
+<p>Multiplies the values of vec1 by the values of vec2.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>vec1</b> - The first vector.</li>
+	<li><b>vec2</b> - The second vector.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">GAME.Vector2.mul(vec1, vec2);
+// or...
+vec1.mul(vec2);</code>
+
+<!--
+-->
+<h3 id="div">GAME.Vector2.div(vec1, vec2)</h3>
+<p>Divides the values of vec1 by the values of vec2.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>vec1</b> - The first vector.</li>
+	<li><b>vec2</b> - The second vector.</li>
+</ul>
+<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<code class="prettyprint">GAME.Vector2.div(vec1, vec2);
+// or...
+vec1.div(vec2);</code>
+
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+</html>
