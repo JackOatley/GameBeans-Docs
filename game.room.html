@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-	
-	<body>
-	
-		<h1>GAME.Room</h1>
-		
-		<p>The GAME.Room object contains functions for dealing with rooms.</p>
-		
+<h1>GAME.Room</h1>
+
+<p>The GAME.Room object contains functions for dealing with rooms.</p>
+
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#constructor">GAME.Room</a></li>
+	<li><a href="#create">GAME.Room.create</a></li>
+	<li><a href="#enter">GAME.Room.enter</a></li>
+	<li><a href="#next">GAME.Room.next</a></li>
+	<li><a href="#previous">GAME.Room.previous</a></li>
+	<li><a href="#setBackground">GAME.Room.setBackground</a></li>
+	<li><a href="#addInstance">GAME.Room.addInstance</a></li>
+	<li><a href="#draw">GAME.Room.draw</a></li>
+	<li><a href="#get">GAME.Room.get</a></li>
+</ul>
+
 <!--
 -->
-<h3>GAME.Room( name, width, height )</h3>
-<p><span class="constructor">Constructor</span></p>
+<h3 id="constructor">GAME.Room( name, width, height )</h3>
 <p>Create a new room.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -24,7 +32,6 @@
 	<li><b>width</b> - The width of the new room.</li>
 	<li><b>height</b> - The height of the new room.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Create a new room
 var newRoom = new GAME.Room("rmNewRoom", 640, 480);
 </code>
@@ -32,19 +39,16 @@ var newRoom = new GAME.Room("rmNewRoom", 640, 480);
 
 <!--
 -->
-<h3>GAME.Room.create( name, width, height )</h3>
-<p><span class="static">Static</span></p>
+<h3 id="create">GAME.Room.create(name, width, height)</h3>
 <p>See Constructor for details.</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
-<code class="prettyprint">// Create a new room
-var newRoom = GAME.Room.create("rmNewRoom", 640, 480);
+<code class="prettyprint">// Create a new room.
+const newRoom = GAME.Room.create("rmNewRoom", 640, 480);
 </code>
 
 
 <!--
 -->
-<h3>GAME.Room.enter( room, options )</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="enter">GAME.Room.enter(room, options)</h3>
 <p>Goes to the given room.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -54,8 +58,7 @@ var newRoom = GAME.Room.create("rmNewRoom", 640, 480);
 		<li><b>transition</b> - Automatically creates a transition and handles the room change callback. Takes an object with properties matching that of GAME.Transition.</li>
 		</ul>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
-<code class="prettyprint">// Go to another room
+<code class="prettyprint">// Go to another room.
 GAME.Room.enter(rmLevel2);
 // or
 GAME.Room.enter("rmLevel2");
@@ -74,21 +77,16 @@ GAME.Room.enter(rmLevel2, {
 
 <!--
 -->
-<h3>GAME.Room.next()</h3>
-<p><span class="static">Static</span></p>
+<h3 id="next">GAME.Room.next()</h3>
 <p>Goes to the next room, meaning the room after placed after the current one in the resource tree.</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
-<code class="prettyprint">// Go to the next room
-GAME.Room.next();
-</code>
+<code class="prettyprint">// Go to the next room.
+GAME.Room.next();</code>
 
 
 <!--
 -->
-<h3>GAME.Room.previous()</h3>
-<p><span class="static">Static</span></p>
-<p>Goes to the previous room, meaning the room after placed before the current one in the resource tree.</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
+<h3 id="previous">GAME.Room.previous()</h3>
+<p>Goes to the previous room, meaning the room after placed before the currentone in the resource tree.</p>
 <code class="prettyprint">// Go to the previous room
 GAME.Room.previous();
 </code>
@@ -96,25 +94,21 @@ GAME.Room.previous();
 
 <!--
 -->
-<h3>GAME.Room.setBackground( room, sprite )</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="setBackground">GAME.Room.setBackground(room, sprite)</h3>
 <p>Sets the sprite to use as the background from the given room.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>room</b> - The room to change the background of.</li>
 	<li><b>sprite</b> - The sprite to use as the background.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
-<code class="prettyprint">// Change the background
-var room = GAME.Room.current;
-GAME.Room.setBackground(room, sprBackground2);
-</code>
+<code class="prettyprint">// Change the background.
+const room = GAME.Room.current;
+GAME.Room.setBackground(room, sprBackground2);</code>
 
 
 <!--
 -->
-<h3>GAME.Room.addInstance( room, object, x, y )</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="addInstance">GAME.Room.addInstance(room, object, x, y)</h3>
 <p>Add an instance of the given object to a room. Note that this does not add it immedietly, like GAME.instance.create() does, instead it adds it to the room so that the every subsequent time you enter that room the instance will be there.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -123,39 +117,32 @@ GAME.Room.setBackground(room, sprBackground2);
 	<li><b>x</b> - The X position to create the instance.</li>
 	<li><b>y</b> - The Y position to create the instance.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Create a new room, add an instance, then enter the room
 var newRoom = GAME.Room.create("rmNewRoom", 640, 480);
 GAME.Room.addInstance(newRoom, objPlayer, 320, 240);
-GAME.Room.enter(newRoom);
-</code>
+GAME.Room.enter(newRoom);</code>
 
 
 <!--
 -->
-<h3>GAME.Room.draw( room )</h3>
-<p><span class="method">Method</span><span class="static">Static</span></p>
+<h3 id="draw">GAME.Room.draw(room)</h3>
 <p>Draws the given room. Currently, this only means it's background. This is done automatically for the room you're in. But for whatever reason if you want to re-draw it or draw a different room in the current one, then you can with this function.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>room</b> - The room to draw.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
-<code class="prettyprint">// Draw the room
-GAME.Room.draw("rmNewRoom");
-</code>
+<code class="prettyprint">// Draw the room.
+GAME.Room.draw(rmNewRoom);</code>
 
 
 <!--
 -->
-<h3>GAME.Room.get( room )</h3>
-<p><span class="static">Static</span></p>
+<h3 id="get">GAME.Room.get(room)</h3>
 <p>Returns the resource object of the current room by it's string name. With this object you can access various properties of the room, and even change them directly. Care needs to be taken when dealing with resource objects directly.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>room</b> - The name of the room to get.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Get current room size
 var room = GAME.Room.get("rmLevel2");
 var width = room.width;

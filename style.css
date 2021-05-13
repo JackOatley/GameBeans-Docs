@@ -24,7 +24,7 @@ h2 {
 h3 {
 	margin-top: 32px;
 	margin-bottom: 8px;
-	color: #85D100;
+	color: #4a7bbd;
 }
 
 h4 {
@@ -52,11 +52,12 @@ a {
 }
 
 code {
-	display: none;
+	display: block;
 	margin: 16px 8px 16px 32px;
 	padding: 16px;
-	background: #F6F6F6;
+	background: #eee;
 	white-space: pre;
+	border-left: 6px solid #4a7bbd;
 }
 
 code.show {

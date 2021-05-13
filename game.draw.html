@@ -1,35 +1,46 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-	
-	<body>
-	
-		<h1>GAME.draw</h1>
-		
-		<p>The GAME.draw object contains functions for drawing onto the canvas.</p>
-		
+<h1>GAME.draw</h1>
+
+<p>The GAME.draw object contains functions for drawing onto the canvas.</p>
+
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#self">GAME.draw.self()</a></li>
+	<li><a href="#sprite">GAME.draw.sprite()</a></li>
+	<li><a href="#canvas">GAME.draw.canvas()</a></li>
+	<li><a href="#setColor">GAME.draw.setColor()</a></li>
+	<li><a href="#setFont">GAME.draw.setFont()</a></li>
+	<li><a href="#setImageSmoothing">GAME.draw.setImageSmoothing()</a></li>
+	<li><a href="#text">GAME.draw.text()</a></li>
+	<li><a href="#save">GAME.draw.save()</a></li>
+	<li><a href="#save">GAME.draw.restore()</a></li>
+	<li><a href="#save">GAME.draw.reset()</a></li>
+	<li><a href="#getTarget">GAME.draw.getTarget()</a></li>
+	<li><a href="#setTarget">GAME.draw.setTarget()</a></li>
+	<li><a href="#resetTarget">GAME.draw.resetTarget()</a></li>
+</ul>
 
 <!--
 -->
-<h3>GAME.draw.self( inst )</h3>
+<h3 id="self">GAME.draw.self( inst )</h3>
 <p>Draws the given instance using it's normal drawing parameters, excluding it's draw events. This includes it's assigned sprite, position, rotation and scaling.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>inst</b> - The instance object to draw.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw the calling instance
 GAME.draw.self( this );</code>
 
 
 <!--
 -->
-<h3>GAME.draw.sprite( spr, index, x, y, sX, sY, rot )</h3>
+<h3 id="sprite">GAME.draw.sprite( spr, index, x, y, sX, sY, rot )</h3>
 <p>Draws a sprite using the given parameters.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -41,14 +52,13 @@ GAME.draw.self( this );</code>
 	<li><b>sY</b> - The vertical scaling of the sprite.</li>
 	<li><b>rot</b> - The rotation of the sprite.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// show some love
 GAME.draw.sprite( "sprHeart", 320, 240, 2, 2, 45 );</code>
 
 
 <!--
 -->
-<h3>GAME.draw.canvas( canvas, x, y )</h3>
+<h3 id="canvas">GAME.draw.canvas( canvas, x, y )</h3>
 <p>Draws a canvas using the given parameters.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -56,20 +66,18 @@ GAME.draw.sprite( "sprHeart", 320, 240, 2, 2, 45 );</code>
 	<li><b>x</b> - The X position to draw the canvas.</li>
 	<li><b>y</b> - The Y position to draw the canvas.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw a canvas
 GAME.draw.canvas( canvas, 0, 0 );</code>
 
 
 <!--
 -->
-<h3>GAME.draw.setColor( color )</h3>
+<h3 id="setColor">GAME.draw.setColor( color )</h3>
 <p>Sets the color to use for drawing text/shapes.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>color</b> - Can either be a string value representing a CSS color, or an object containing {r, g, b, [a]} or {h, s, l, [a]}.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// using CSS hex value
 GAME.draw.setColor( "#FF0000" );
 GAME.draw.shape.rectangle( 20, 20, 20, 20 );
@@ -113,7 +121,7 @@ GAME.draw.shape.rectangle( 20, 380, 20, 20 );</code>
 
 <!--
 -->
-<h3>GAME.draw.setFont( font, size, align, baseline )</h3>
+<h3 id="setFont">GAME.draw.setFont( font, size, align, baseline )</h3>
 <p>Sets the font to use for drawing text with the GAME.draw.text function.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -122,27 +130,25 @@ GAME.draw.shape.rectangle( 20, 380, 20, 20 );</code>
 	<li><b>align</b> - The horizontal alignment of the font.</li>
 	<li><b>baseline</b> - The vertical alignment of the font.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// set the font used for drawing text
 GAME.draw.setFont( "Arial", 20, "center", "middle" );</code>
 
 
 <!--
 -->
-<h3>GAME.draw.setImageSmoothing( enable )</h3>
+<h3 id="setImageSmoothing">GAME.draw.setImageSmoothing( enable )</h3>
 <p>Enables or disables image smoothing when drawing images/sprites.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>enable</b> - Enable (true) or disable (false).</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw stuff smooooth
 GAME.draw.setImageSmoothing( true );</code>
 
 
 <!--
 -->
-<h3>GAME.draw.text( text, x, y, [options] )</h3>
+<h3 id="text">GAME.draw.text( text, x, y, [options] )</h3>
 <p>Draw some text to the screen at the given position. Uses the font as defined by the GAME.draw.setFont function.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -162,7 +168,6 @@ GAME.draw.setImageSmoothing( true );</code>
 	</ul>
 	</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Say howdy
 GAME.draw.text("Howdy, World!", 320, 240);
 
@@ -178,9 +183,8 @@ GAME.draw.text("Howdy, World!", 320, 240, {
 
 <!--
 -->
-<h3>GAME.draw.save()<br>GAME.draw.restore()<br>GAME.draw.reset()</h3>
+<h3 id="save">GAME.draw.save()<br>GAME.draw.restore()<br>GAME.draw.reset()</h3>
 <p>These functions are used to save all the current settings applied to the canvas context and then restore them back. Restore sets them back to the last state saved, and reset sets them back to the state they'd be normally (like a new Draw Event). Most commonly used with the GAME.draw.transform functions.</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw text at different positions using translate
 GAME.draw.save();
 GAME.draw.setFont( "Arial", 20, "center", "middle" );
@@ -206,22 +210,20 @@ GAME.draw.text( "The translation is now gone, so I'm at the bottom like I wanted
 
 <!--
 -->
-<h3>GAME.draw.getTarget()</h3>
+<h3 id="getTarget">GAME.draw.getTarget()</h3>
 <p>Returns the canvas that the game is currently rendering to. Note that this IS the canvas and not the context.</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// get current rendering target
 var target = GAME.draw.getTarget();</code>
 
 
 <!--
 -->
-<h3>GAME.draw.setTarget( canvas )</h3>
+<h3 id="setTarget">GAME.draw.setTarget( canvas )</h3>
 <p>Sets the canvas that further rendering should apply to.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>canvas</b> - A canvas element.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// using a temporary canvas
 var tempCanvas = GAME.canvas.create({
 	width: 640,
@@ -238,7 +240,7 @@ GAME.draw.canvas( tempCanvas, 0, 0 );
 
 <!--
 -->
-<h3>GAME.draw.resetTarget()</h3>
+<h3 id="resetTarget">GAME.draw.resetTarget()</h3>
 <p>Resets the rendering target to the one used before the last setTarget.</p>
 
 

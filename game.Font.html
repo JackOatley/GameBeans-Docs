@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
+<h1>GAME.Font</h1>
 
-	<body>
+<p>The GAME.Font object contains functions for dealing with fonts.</p>
 
-		<h1>GAME.Font</h1>
-
-		<p>The GAME.Font object contains functions for dealing with fonts.</p>
-
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#constructor">GAME.Font()</a></li>
+	<li><a href="#getCss">GAME.Font.getCss()</a></li>
+	<li><a href="#applyCss">GAME.Font.applyCss()</a></li>
+	<li><a href="#convertToBitmapFont">GAME.Font.convertToBitmapFont()</a></li>
+	<li><a href="#get">GAME.Font.get()</a></li>
+</ul>
 
 <!--
 -->
@@ -29,7 +33,6 @@
 		<li><b>apply</b> - If true, assigns the font to a @font-face in a style tag.</li>
 	</ul>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">var myFont = new GB.Font({
 	name: "fntMyFont",
 	src: source,
@@ -45,13 +48,12 @@ var myFont = GB.Font.create({
 
 <!--
 -->
-<h3>GAME.Font.getCss(font)</h3>
+<h3 id="getCss">GAME.Font.getCss(font)</h3>
 <p>Returns a string of CSS code that's needed to be applied to the page to use this font in the DOM or on a canvas.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>font</b> - The Font resource.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">var css = GAME.Font.getCss(fntMyFont);
 // or...
 var css = fntMyFont.getCss();</code>
@@ -59,13 +61,12 @@ var css = fntMyFont.getCss();</code>
 
 <!--
 -->
-<h3>GAME.Font.applyCss(font)</h3>
+<h3 id="applyCss">GAME.Font.applyCss(font)</h3>
 <p>Applies the CSS code from GAME.Font.getCss().</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>font</b> - The Font resource.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">GAME.Font.applyCss(fntMyFont);
 // or...
 fntMyFont.applyCss();</code>
@@ -73,7 +74,7 @@ fntMyFont.applyCss();</code>
 
 <!--
 -->
-<h3>GAME.Font.convertToBitmapFont(font)</h3>
+<h3 id="convertToBitmapFont">GAME.Font.convertToBitmapFont(font)</h3>
 <p>Converts the vector font to a bitmap font.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -86,7 +87,6 @@ fntMyFont.applyCss();</code>
 		<li><b>color</b> - An array containing the RGBA channels respectively.</li>
 	</ul>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Our options.
 var options = {
 	size: 16,
@@ -102,13 +102,12 @@ fntMyFont.convertToBitmapFont(options);</code>
 
 <!--
 -->
-<h3>GAME.Font.get(name)</h3>
+<h3 id="get">GAME.Font.get(name)</h3>
 <p>Returns the font resource of the given name.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>name</b> - The string name of the font to get.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">var font = GAME.Font.get("fntMyFont");</code>
 
 

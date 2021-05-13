@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-
 <html>
-
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-
-	<body>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
 <h1>GAME.sprite</h1>
 <p>The GAME.sprite object contains functions for dealing with sprites.</p>
@@ -83,7 +79,6 @@ WIP, and is mainly for internal use.</p>
 	<li><b>x</b> - The new X position.</li>
 	<li><b>y</b> - The new Y position.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Set origin to 0, 0.
 GAME.sprite.setOrigin(sprPlayer, 0, 0);</code>
 
@@ -100,7 +95,6 @@ This multiplies the source color with the sprite destination colors.
 	<li><b>spr</b> - The name or object of the sprite to tint.</li>
 	<li><b>col</b> - The color with which to tint.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Paint me red!
 GAME.sprite.tint(sprPlayer, "#FFFFFF");</code>
 
@@ -120,7 +114,6 @@ image with no changes.
 	<li><b>spr</b> - The name or object of the sprite to tint.</li>
 	<li><b>col</b> - The color with which to tint.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Fade to red.
 GAME.sprite.fade(sprPlayer, {
 	r: 255,
@@ -135,7 +128,6 @@ GAME.sprite.fade(sprPlayer, {
 Restores the sprite to it original state, reverting any changes such as tint or
 fade.
 </p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Restore sprite.
 GAME.sprite.restore(sprPlayer); // Using resource directly.
 GAME.sprite.restore("sprPlayer2"); // Or using resource name.
@@ -162,7 +154,6 @@ The quality of SVG, the speed of Bitmaps.
 		<li><b>height</b> - The height of the cached sprite. Defaults to original sprite height. Arbitrary.</li>
 	</ul>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Cache the star sprite
 GAME.sprite.cache(svgStar, {
 	width: 128,
@@ -178,7 +169,6 @@ GAME.sprite.cache(svgStar, {
 <ul>
 	<li><b>sprite</b> - Sprite resource or name.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Get canvas of sprite.
 var spriteCanvas = GAME.sprite.toCanvas(sprPlayer); // Static function.
 var spriteCanvas = sprPlayer.toCanvas(); // Method.</code>
@@ -197,7 +187,6 @@ Returns an ArrayBuffer containing the RGBA components of the pixel of the sprite
 	<li><b>x</b> - Pixel x coord.</li>
 	<li><b>y</b> - Pixel y coord.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Get a pixel's color.
 var color = GAME.sprite.getPixel(sprPlayer, 0, 16, 16); // Static function.
 var color = sprPlayer.getPixel(0, 16, 16); // Method.</code>
@@ -211,7 +200,6 @@ var color = sprPlayer.getPixel(0, 16, 16); // Method.</code>
 <ul>
 	<li><b>sprite</b> - Sprite resource or name.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Get it.
 var spriteObject = GAME.sprite.get("sprPlayer");</code>
 

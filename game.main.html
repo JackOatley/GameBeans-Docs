@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-	
-	<body>
-	
-		<h1>GAME.main</h1>
-		
-		<p>The GAME.main object contains functions for dealing with the main game loop.</p>
-		
-		
-<h3>GAME.main.setGameSpeed( cursor )</h3>
+<h1>GAME.main</h1>
+
+<p>
+	The GAME.main object contains functions for dealing with the main game loop.
+</p>
+
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#setGameSpeed">GAME.main.setGameSpeed</a></li>
+</ul>
+
+<h3 id="setGameSpeed">GAME.main.setGameSpeed(speed)</h3>
 <p>Sets the speed of the game. It's important to know that this value determines how many times a second the Step Event should execute. The Draw Event will remain uneffected and always executes as fast as the browser allows, which is usually your monitor refresh rate. For example, if you have a 144hz monitor, your game will likely be executing the Draw Event 144 times a second. Where, by default, the step event always executes 60 times a second. This is why you shouldn't put game logic in the Draw Event. And you can use this function to determine the speed of your game logic. Also note, that any input will be saved until the next step, even if you set the game speed to be very slow.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>speed</b> - The speed you want the game to run at.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
-<code class="prettyprint">// Sloooooooowmoooooo
-GAME.main.setGameSpeed( 10 );</code>
+<code class="prettyprint">// Sloooooooowmoooooo...
+GAME.main.setGameSpeed(10);</code>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

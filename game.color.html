@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-	
-	<body>
-	
-		<h1>GAME.color</h1>
-		
-		<p>The GAME.color object contains functions for dealing with colors.</p>
-		
-		
+<h1>GAME.color</h1>
+
+<p>The GAME.color object contains functions for dealing with colors.</p>
+
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#hexToRgb">GAME.color.hexToRgb()</a></li>
+	<li><a href="#componentToHex">GAME.color.componentToHex()</a></li>
+	<li><a href="#rgbToHex">GAME.color.rgbToHex()</a></li>
+</ul>
+
 <!--
 -->
-<h3>GAME.color.hexToRgb( hex )</h3>
+<h3 id="hexToRgb">GAME.color.hexToRgb(hex)</h3>
 <p>Takes a hex value represented as a string and returns an object contained the separated RGB components. A hex value would be as such: "#FF00FF". Returns null if the value provided is not valid.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>hex</b> - String represented hex vlaue.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">/*
 The following code returns an object the looks like this:
 { r: 255, g: 0, b: 255 }
@@ -32,20 +33,19 @@ var colorAsRgb = GAME.color.hexToRgb( "#FF00FF" );</code>
 
 <!--
 -->
-<h3>GAME.color.componentToHex( c )</h3>
+<h3 id="componentToHex">GAME.color.componentToHex(c)</h3>
 <p>Takes a color component; R, G or B, and returns its hex value without the hash, such as "00" or "FF".</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>hex</b> - String represented hex value.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Where's the hexit?
 var red = GAME.color.componentToHex( 255 ); // red = "FF"</code>
 
 
 <!--
 -->
-<h3>GAME.color.rgbToHex( r, g, b )</h3>
+<h3 id="rgbToHex">GAME.color.rgbToHex(r, g, b)</h3>
 <p>Takes a paremeter for each component of a color and returns the complete hex value as a string.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -53,7 +53,6 @@ var red = GAME.color.componentToHex( 255 ); // red = "FF"</code>
 	<li><b>g</b> - The green component.</li>
 	<li><b>b</b> - The blue component.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// convert components to a single hex value
 var hex = GAME.color.rgbToHex( 0, 128, 255 ); // hex = "#0080FF"</code>
 

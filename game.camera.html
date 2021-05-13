@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-	
-	<body>
-	
-		<h1>GAME.camera</h1>
-		
-		<p>The GAME.camera object contains functions for dealing with cameras. Cameras allow an easy and convenient way of moving around and seeing inside a room. They can be assigned to follow an instance or even multiple instances!</p>
-		
-		
+<h1>GAME.camera</h1>
+
+<p>
+	The GAME.camera object contains functions for dealing with cameras. Cameras
+	allow an easy and convenient way of moving around and seeing inside a room.
+	They can be assigned to follow an instance or even multiple instances!
+</p>
+
+
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#create">GAME.camera.create()</a></li>
+	<li><a href="#update">GAME.camera.update()</a></li>
+</ul>
+
 <!--
 -->
-<h3>GAME.camera.create( options )</h3>
+<h3 id="create">GAME.camera.create( options )</h3>
 <p>Creates a new camera. Takes a single options object. While it's possible to have multiple cameras, currently only the last created one has a visible effect as it just overwrites any previous camera changes. In the future, cameras will be able to be assigned to canvases, and thus act as a "view" into the room.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -29,7 +35,6 @@
 		<li><b>height</b> - The height of the camera. Defaults to current room height.</li>
 	</ul>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// follow a single instance
 GAME.camera.create({
 	follow: global.player
@@ -53,7 +58,7 @@ GAME.camera.create({
 		global.player2
 	]
 });
-	
+
 // same result as above, but this time using fractions
 GAME.camera.create({
 	follow: [
@@ -65,11 +70,14 @@ GAME.camera.create({
 
 <!--
 -->
-<h3>GAME.camera.update()</h3>
-<p>Updates the cameras; their positions, bounds, etc. This is done internally at the end of the step event but before the draw event. You shouldn't need to use this function except in very specific circumstances (like mid-step and you're doing something that requires updated camera bounds, etc.)</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
-<code class="prettyprint">//
-GAME.camera.update();</code>
+<h3 id="update">GAME.camera.update()</h3>
+<p>
+	Updates the cameras; their positions, bounds, etc. This is done internally
+	at the end of the step event but before the draw event. You shouldn't need
+	to use this function except in very specific circumstances (like mid-step
+	and you're doing something that requires updated camera bounds, etc.)
+</p>
+<code class="prettyprint">GAME.camera.update();</code>
 
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

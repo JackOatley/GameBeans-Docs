@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-	
-	<body>
-	
 <h1>GAME.draw.transform</h1>
 <p>The GAME.draw.transform object contains functions for setting the scaling, rotating and translating of all subsequent drawing.</p>
-		
+
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#scale">GAME.draw.transform.scale()</a></li>
+	<li><a href="#rotate">GAME.draw.transform.rotate()</a></li>
+	<li><a href="#translate">GAME.draw.transform.translate()</a></li>
+	<li><a href="#setDefault">GAME.draw.transform.setDefault()</a></li>
+</ul>
 
 <!--
--->	
-<h3>GAME.draw.transform.scale( sX, sY )</h3>
+-->
+<h3 id="scale">GAME.draw.transform.scale( sX, sY )</h3>
 <p>Adds the given horizontal and vertical scaling to the transformation.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>sX</b> - The horizontal scaling.</li>
 	<li><b>sY</b> - The vertical scaling.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw the calling instance, bigger
 GAME.draw.transform.scale( 2, 2 );
 GAME.draw.self( this );</code>
@@ -30,36 +32,34 @@ GAME.draw.self( this );</code>
 
 <!--
 -->
-<h3>GAME.draw.transform.rotate( rot )</h3>
+<h3 id="rotate">GAME.draw.transform.rotate(rot)</h3>
 <p>Adds the rotation to the transformation.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>rot</b> - The rotation, in degrees, to add.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw the calling instance, upside down
-GAME.draw.transform.rotate( 180 );
-GAME.draw.self( this );</code>
+GAME.draw.transform.rotate(180);
+GAME.draw.self(this);</code>
 
 
 <!--
 -->
-<h3>GAME.draw.transform.translate( x, y )</h3>
+<h3 id="translate">GAME.draw.transform.translate(x, y)</h3>
 <p>Adds the given x and y positions to the transformation.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>x</b> - The X position to add.</li>
 	<li><b>y</b> - The Y position to add.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw the calling instance, somewhere else
-GAME.draw.transform.translate( 100, 100 );
-GAME.draw.self( this );</code>
+GAME.draw.transform.translate(100, 100);
+GAME.draw.self(this);</code>
 
 
 <!--
 -->
-<h3>GAME.draw.transform.setDefault( options )</h3>
+<h3 id="setDefault">GAME.draw.transform.setDefault(options)</h3>
 <p>Sets the default transformation. This will be what the Draw Event sets the transform to when it resets before rendering.</p>
 <h4>Parameters:</h4>
 <ul>

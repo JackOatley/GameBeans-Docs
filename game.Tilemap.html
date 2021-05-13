@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-
 <html>
-
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-
-	<body>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
 <h1>GAME.Tilemap</h1>
-<p>GAME.Tilemap is a class object, and so is used as a constructor. A tilemap is used to render a map made up of tiles from a single sheet/texture atlas (as a Sprite resource).</p>
+<p>
+	GAME.Tilemap is a class object, and so is used as a constructor. A tilemap
+	is used to render a map made up of tiles from a single sheet/texture atlas
+	(as a Sprite resource).
+</p>
 
 <h2>Contents:</h2>
 <ul>
@@ -38,7 +38,6 @@
 		<li><b>mapHeight</b> - How many tiles high the Tilemap should be.</li>
 	</ul>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Setup tilemap
 global.tilemap = new GAME.Tilemap({
 	atlas: sprTiles,
@@ -55,7 +54,6 @@ global.tilemap = new GAME.Tilemap({
 -->
 <h3 id="create">GAME.Tilemap.create(options)</h3>
 <p>See Constructor for details.</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Setup tilemap
 global.tilemap = GAME.Tilemap.create({
 	atlas: sprTiles,
@@ -79,7 +77,6 @@ global.tilemap = GAME.Tilemap.create({
 	<li><b>y</b> - The Y grid position to place this tile.</li>
 	<li><b>index</b> - The tile index.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Set a tile, method
 global.tilemap.set("ground", 5, 5, 18);
 
@@ -102,7 +99,6 @@ GAME.Tilemap.set(global.tilemap, "ground", 5, 5, 18);</code>
 		<li><b>bottom</b> - The bottom of the view box.</li>
 	</ul>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Draw the tile map
 global.tilemap.draw({
 	order: ["water", "ground", "buildings"],

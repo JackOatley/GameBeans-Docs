@@ -1,34 +1,47 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-	
-	<body>
-	
-		<h1>GAME.math</h1>
-		
-		<p>The GAME.math object contains constants and functions for dealing with math.</p>
+<h1>GAME.math</h1>
 
+<p>
+	The GAME.math object contains constants and functions for dealing with math.
+</p>
 
-<h3>GAME.math.randomInt( min, max )</h3>
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#randomInt">GAME.math.randomInt</a></li>
+	<li><a href="#choose">GAME.math.choose</a></li>
+	<li><a href="#lengthDirX">GAME.math.lengthDirX</a></li>
+	<li><a href="#lengthDirX">GAME.math.lengthDirY</a></li>
+	<li><a href="#pointDistance">GAME.math.pointDistance</a></li>
+	<li><a href="#pointDirection">GAME.math.pointDirection</a></li>
+	<li><a href="#angleDifference">GAME.math.angleDifference</a></li>
+	<li><a href="#cos">GAME.math.cos</a></li>
+	<li><a href="#cos">GAME.math.sin</a></li>
+	<li><a href="#cos">GAME.math.sign</a></li>
+	<br/>
+	<li><a href="#PI">GAME.math.PI</a></li>
+	<li><a href="#RADTODEG">GAME.math.DEGTORAD</a></li>
+	<li><a href="#RADTODEG">GAME.math.RADTODEG</a></li>
+</ul>
+
+<h3 id="randomInt">GAME.math.randomInt( min, max )</h3>
 <p>Returns a random integer within the given range. Both values in this function are inclusive, so if you enter 5 and 9 as min and max respectively, then both those values are possible return values.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>min</b> - The min value in the range.</li>
 	<li><b>max</b> - The max value in the range.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// pick a number between 0 and 30
 var number = GAME.math.randomInt( 0, 30 );</code>
 
 
-<h3>GAME.math.choose( ...params )</h3>
+<h3 id="choose">GAME.math.choose( ...params )</h3>
 <p>This function takes an arbitrary number of parameters and returns just one of them, chosen at random.</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// what's for tea?
 var tea = GAME.math.choose( "burgers", "pie", "fish", "kale", "friendly bacteria" );
 if ( tea === "kale" || tea === "friendly bacteria" ) {
@@ -36,20 +49,19 @@ if ( tea === "kale" || tea === "friendly bacteria" ) {
 }</code>
 
 
-<h3>GAME.math.lengthDirX( len, dir )<br>GAME.math.lengthDirY( len, dir )</h3>
+<h3 id="lengthDirX">GAME.math.lengthDirX(len, dir)<br/>GAME.math.lengthDirY(len, dir)</h3>
 <p>These functions return the X and Y positions respectively, from 0, of a point at the specified distance away in the given direction.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>len</b> - The length/distance from 0 of the new point.</li>
 	<li><b>dir</b> - The direction in which the "len" reaches out, in degrees.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// movement
 this.x += GAME.math.lengthDirX( 2, this.rotation );
 this.y += GAME.math.lengthDirY( 2, this.rotation );</code>
 
 
-<h3>GAME.math.pointDistance( x1, y1, x2, y2 )</h3>
+<h3 id="pointDistance">GAME.math.pointDistance( x1, y1, x2, y2 )</h3>
 <p>Returns the distance between 2 points.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -58,13 +70,12 @@ this.y += GAME.math.lengthDirY( 2, this.rotation );</code>
 	<li><b>x2</b> - The X position of the second point.</li>
 	<li><b>y2</b> - The Y position of the second point.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// how far away is the moon?
-var distance = GAME.math.pointDistance( earth.x, earth.y, moon.x, moon.y );
+var distance = GAME.math.pointDistance(earth.x, earth.y, moon.x, moon.y);
 // It's 384,400 km, btw</code>
 
 
-<h3>GAME.math.pointDirection( x1, y1, x2, y2 )</h3>
+<h3 id="pointDirection">GAME.math.pointDirection( x1, y1, x2, y2 )</h3>
 <p>Returns the direction, in degrees, between 2 points. As a reference; 0 is right, 90 is down, 180 is left and 270 is up.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -73,36 +84,38 @@ var distance = GAME.math.pointDistance( earth.x, earth.y, moon.x, moon.y );
 	<li><b>x2</b> - The X position of the second point.</li>
 	<li><b>y2</b> - The Y position of the second point.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// in which direction is my quest? those 20 arbitrary badguys won't kill themselves!
 var direction = GAME.math.pointDirection( player.x, player.y, quest.x, quest.y );</code>
 
 
-<h3>GAME.math.angleDifference( angle1, angle2 )</h3>
+<h3 id="angleDifference">GAME.math.angleDifference( angle1, angle2 )</h3>
 <p>Returns the difference, in degrees, between 2 angles. This value can range from -180 to 180.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>angle1</b> - The first angle.</li>
 	<li><b>angle2</b> - The second angle.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// turn and face the enemy!
 var direction = GAME.math.pointDirection( this.x, this.y, enemy.x, enemy.y );
 var facing = Math.sign( GAME.math.angleDifference( this.rotation, direction ) );
 this.rotation += facing;</code>
 
 
-<h3>GAME.math.PI</h3>
+<h3 id="cos">GAME.math.cos<br/>GAME.math.sin<br/>GAME.math.sign</h3>
+<p>Functions, all the same as their counterparts in the Math library.</p>
+<h4>Further:</h4>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math</a>
+
+
+<h3 id="PI">GAME.math.PI</h3>
 <p>Variable that has the value of pi. Same as Math.PI.</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// i like pi
 var pi = GAME.math.PI;
 var morePi = Math.PI;</code>
 
 
-<h3>GAME.math.RADTODEG<br>GAME.math.DEGTORAD</h3>
+<h3 id="RADTODEG">GAME.math.RADTODEG<br/>GAME.math.DEGTORAD</h3>
 <p>Variables used to convert between radians and degrees. The value of RADTODEG is (180 / PI) and the value of DEGTORAD is (PI / 180).</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// convert radians to degrees
 var radians = 1.5708;
 var degrees = radians * GAME.math.RADTODEG; // 90
@@ -110,12 +123,6 @@ var degrees = radians * GAME.math.RADTODEG; // 90
 // convert degrees to radians
 var degrees = 90;
 var radians = degrees * GAME.math.DEGTORAD; // 1.5708</code>
-
-
-<h3>GAME.math.cos<br>GAME.math.sin<br>GAME.math.sign</h3>
-<p>Functions, all the same as their counterparts in the Math library.</p>
-<h4>Further:</h4>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math</a>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

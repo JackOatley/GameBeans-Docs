@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-
 <html>
-
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-
-	<body>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
 <h1>GAME.Grid</h1>
-<p>GAME.Grid is a constructable class object. A Grid can be used to store and retrieve any data in a two-dimensional grid structure..</p>
+<p>
+	GAME.Grid is a constructable class object. A Grid can be used to store and
+	retrieve any data in a two-dimensional grid structure.
+</p>
 
 <h2>Contents:</h2>
 <ul>
@@ -37,7 +36,6 @@
 		<li><b>value</b> - Default value that the grid should be cleared to.</li>
 	</ul>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Create a new grid with every cell set to 10
 var myGrid = new GAME.Grid(64, 64, {
 	value: 10
@@ -48,7 +46,6 @@ var myGrid = new GAME.Grid(64, 64, {
 -->
 <h3 id="create">GAME.Grid.create(width, height, options)</h3>
 <p>See Constructor for details.</p>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Create a new grid with every cell set to 10
 var myGrid = new GAME.Grid.create(64, 64, {
 	value: 10
@@ -64,7 +61,6 @@ var myGrid = new GAME.Grid.create(64, 64, {
 	<li><b>x</b> - The X position.</li>
 	<li><b>y</b> - The Y position.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Get a value
 var myVal = myGrid.get(16, 32);
 
@@ -81,7 +77,6 @@ var myVal = GAME.Grid.get(myGrid, 16, 32);</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to set.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Set a value
 myGrid.set(16, 32, 20);
 
@@ -98,7 +93,6 @@ GAME.Grid.set(myGrid, 16, 32, 20);</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to add.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Add a value
 myGrid.set(16, 32, 20);
 myGrid.add(16, 32, 20); // Is now 40
@@ -116,7 +110,6 @@ GAME.Grid.add(myGrid, 16, 32, 20); // And 60</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to multiply by.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Multiply a value
 myGrid.set(16, 32, 20);
 myGrid.multiply(16, 32, 4); // Is now 80
@@ -134,7 +127,6 @@ GAME.Grid.multiply(myGrid, 16, 32, 2); // And 160</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to multiply by.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Clear the grid
 myGrid.clear(0);
 
@@ -151,7 +143,6 @@ GAME.Grid.clear(myGrid, 0);</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to multiply by.</li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Destroy the grid
 myGrid.destroy();
 

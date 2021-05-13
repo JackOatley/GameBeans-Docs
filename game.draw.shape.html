@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-	
-	<body>
-	
 <h1>GAME.draw.shape</h1>
 <p>The GAME.draw.shape object contains functions for drawing shapes.</p>
-		
+
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#line">GAME.draw.shape.line()</a></li>
+	<li><a href="#ellipse">GAME.draw.shape.ellipse()</a></li>
+	<li><a href="#rectangle">GAME.draw.shape.rectangle()</a></li>
+</ul>
 
 <!--
--->	
-<h3>GAME.draw.shape.line( x1, y1, x2, y2, options )</h3>
+-->
+<h3 id="line">GAME.draw.shape.line(x1, y1, x2, y2, options)</h3>
 <p>Draws a line between the given coordinates.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -28,16 +30,15 @@
 		<li><b>color</b> - The color of the line, defaults to global drawing color.</li>
 	</ul></li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw a red line from a to b
-GAME.draw.shape.line( z.x, z.y, b.x, b.y, {
+GAME.draw.shape.line(a.x, a.y, b.x, b.y, {
 	color: "#FF0000"
 });</code>
 
 
 <!--
--->	
-<h3>GAME.draw.shape.ellipse( x, y, xr, yr, options )</h3>
+-->
+<h3 id="ellipse">GAME.draw.shape.ellipse(x, y, xr, yr, options)</h3>
 <p>Draws elliptical shapes, like ovals and circles.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -58,20 +59,19 @@ GAME.draw.shape.line( z.x, z.y, b.x, b.y, {
 		</ul></li>
 	</ul></li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw a healthbar
-GAME.draw.shape.ellipse( 320, 240, 100, 50, {
+GAME.draw.shape.ellipse(320, 240, 100, 50, {
     healthbar: {
         amount: this.health / this.maxHealth,
         color: "#FFFFFF",
         background: "#000000"
     }
-} );</code>
+});</code>
 
 
 <!--
--->	
-<h3>GAME.draw.shape.rectangle( x, y, w, h, options )</h3>
+-->
+<h3 id="rectangle">GAME.draw.shape.rectangle(x, y, w, h, options)</h3>
 <p>Draws elliptical shapes, like ovals and circles.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -92,16 +92,14 @@ GAME.draw.shape.ellipse( 320, 240, 100, 50, {
 		</ul></li>
 	</ul></li>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// draw a healthbar
-GAME.draw.shape.rectangle( 92, 28, 322, 10, {
+GAME.draw.shape.rectangle(92, 28, 322, 10, {
     healthbar: {
         amount: this.health / this.maxHealth,
         color: "#FFFFFF",
         background: "#000000"
     }
-} );</code>
-
+});</code>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-
 <html>
-
-	<head>
-		<link rel="stylesheet" href="style.css">
-		<script src="funcs.js"></script>
-	</head>
-
-	<body>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
 <h1>GAME.Transition</h1>
-<p>GAME.Transition is a class object, and so is used as a constructor. A transition is split into 2 phases; "in" and "out". At the end of the "in" phase, if the transition has a callback it will be executed, then the "out" phase begins. At the end of the "out" phase, the transition is destroyed.</p>
+<p>
+	GAME.Transition is a class object, and so is used as a constructor. A
+	transition is split into 2 phases; "in" and "out". At the end of the "in"
+	phase, if the transition has a callback it will be executed, then the "out"
+	phase begins. At the end of the "out" phase, the transition is destroyed.
+</p>
 
 <h2>Contents:</h2>
 <ul>
@@ -32,7 +33,6 @@
 		<li><b>prefab</b> - A previously created object that overwrites provided parameters.</li>
 		</ul>
 </ul>
-<h4 onclick="showExample(this)" class="show-toggle">Example</h4>
 <code class="prettyprint">// Go to another room
 new GAME.Transition({
 	type: "fade",
