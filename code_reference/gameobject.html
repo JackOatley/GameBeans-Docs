@@ -3,19 +3,19 @@
 <html>
 
 	<head>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../style.css">
 		<script src="funcs.js"></script>
 	</head>
-	
+
 	<body>
-	
+
 <h1>The GAME Object</h1>
-		
+
 <p>The GAME object is GameBeans' own JavaScript library. It mirrors the visual Actions, but also has a lot more functionality. GameBeans uses this so as to not pollute the global scope in JavaScript with a bunch of proprietary names that you might have wanted to use yourself. Therefore, any GameBeans function you want to use will be inside the GAME object.</p>
-		
+
 <p>Like so:</p>
 <code class="prettyprint" style="display: block">GAME.draw.text( "Hi, I'm a GameBeans function!" );</code>
-		
+
 <p>In some cases, and for various reasons, the GAME object also contains functions native to JavaScript, in which case you can use either:</p>
 <code>Math.sin( x ); // function from JavaScript's Math object
 GAME.math.sin( x ); // copy in the GAME object</code>
@@ -31,7 +31,7 @@ var ctx = myCanvasElement.getContext( "2d" ); // normal JavaScript
 ctx.rotate( (Math.PI / 180) * 45 );
 GAME.draw.transform.rotate( 45 ); // using GameBeans
 </code>
-		
+
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
 </html>
