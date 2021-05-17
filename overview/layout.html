@@ -2,55 +2,104 @@
 
 <html>
 
-	<head>
-		<link rel="stylesheet" href="../style.css">
-	</head>
-	
-	<body>
-	
-		<h1>Understanding The Layout</h1>
-		
-		<p>The GameBeans IDE is made up of 5 main elements; the Taskbar, the Workspace, the Project View, the Context View and the Console.</p>
-		
-		
-		<h3>The Taskbar</h3>
-		
-		<p>The Taskbar runs along the top of the IDE and is always visible, even when running a game. In contains basic information about your project on the left and buttons to control your project on the right. The buttons include; <span class="gb-purple">Run</span>, <span class="gb-purple">New</span>, <span class="gb-purple">Save</span>, <span class="gb-purple">Load</span>, <span class="gb-purple">Export</span>, <span class="gb-purple">Import</span> and <span class="gb-purple">Demos</span>.</p>
-		
-		<p>The <span class="gb-purple">Run</span> button opens and runs your game in an iframe on top of the GameBeans IDE. If there is a problem then details should be displayed in the Console, as detailed further down this page.</p>
-		
-		<p>The <span class="gb-purple">New</span> button creates a new, blank project.</p>
-		
-		<p>The <span class="gb-purple">Save</span> button saves the current project. This is done using your browser's IndexedDB API. The IndexedDB (DB meaning Database) is a solution that allows you to save relatively large files persistently, and locally.</p>
-		
-		<p>The <span class="gb-purple">Load</span> button allows you to load previously saved projects (from the IndexedDB).</p>
-		
-		<p>The <span class="gb-purple">Export</span> button allows you to download your project as a *.gb file. A *.gb file is simply a text file containing the serialized JSON of your project. This button brings up a File Explorer window.</p>
-		
-		<p>The <span class="gb-purple">Import</span> button creates allows you to load in a previously exported *.gb project file from your computer. This button brings up a File Explorer window.</p>
-		
-		<p>The <span class="gb-purple">Demos</span> button allows you to see a list of GameBeans demos. When you click one it'll download directly into the app and you can explore and run it like any other project.</p>
-		
-		
-		<h3>The Workspace</h3>
-		
-		<p>The Workspace is the main, and central view in which you can view and edit your project's resources, such as; Objects, Sprites, Fonts, Sounds and Rooms. For this purpose it is the largest view.</p>
-		
-		
-		<h3>The Project View</h3>
-		
-		<p>The Project View is the panel at the right-hand side of the IDE. It contains project wide resources and settings. The resources selected here open up in the Workspace view.</p>
-		
-		
-		<h3>The Context View</h3>
-		
-		<p>The Context View changes depending on which kind of resource is opened in the Workspace. Opening an Object resource, for example, will show Events and Actions in the Context View. Whereas opening a Room will show the different Objects that you can place in it. Opening a Sprite or Sound resource, however, hides the Context View as they don't currently need it.</p>
-		
-		
-		<h3>The Console</h3>
-		
-		<p>The Console is where messages are logged that supply you with helpful information in an unobtrusive way. It can show you the progress of a download, where and what errors occured, and generally just feedback of things so you know for sure they happened.</p>
-		
-	</body>
+<head>
+	<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+	<h1>Understanding The Layout</h1>
+
+	<p>
+		The GameBeans IDE is made up of 5 main elements; the Taskbar, the
+		Workspace, the Project View, the Context View and the Console.
+	</p>
+
+
+	<h3>The Taskbar</h3>
+
+	<figure>
+		<img src="images/taskbar.png"/>
+		<figcaption>The taskbar.</figcaption>
+	</figure>
+
+	<p>The Taskbar runs along the top of the IDE and is always visible, even
+		when running a game. In contains basic information about your project
+		on the left and buttons to control your project on the right. The
+		buttons include; <span class="gb-purple">Run</span>,
+		<span class="gb-purple">New</span>,
+		<span class="gb-purple">Save</span>,
+		<span class="gb-purple">Load</span>,
+		<span class="gb-purple">Export</span>,
+		<span class="gb-purple">Import</span>
+		and <span class="gb-purple">Demos</span>.
+	</p>
+
+	<p>The <span class="gb-purple">Run</span>
+		button opens and runs your game in an iframe on top of the GameBeans
+		IDE. If there is a problem then details should be displayed in the
+		Console, as detailed further down this page.
+	</p>
+
+	<p>The <span class="gb-purple">New</span>
+		button creates a new, blank project.
+	</p>
+
+	<p>The <span class="gb-purple">Save</span>
+		button saves the current project. This is done using your browser's
+		IndexedDB API. The IndexedDB (DB meaning Database) is a solution that
+		allows you to save relatively large files persistently, and locally.
+	</p>
+
+	<p>The <span class="gb-purple">Load</span>
+		button allows you to load previously saved projects (from the
+		IndexedDB).
+	</p>
+
+	<p>The <span class="gb-purple">Export</span>
+		button allows you to download your project as a *.gb file. A *.gb file
+		is simply a text file containing the serialized JSON of your project.
+		This button brings up a File Explorer window.
+	</p>
+
+	<p>The <span class="gb-purple">Import</span>
+		button creates allows you to load in a previously exported *.gb project
+		file from your computer. This button brings up a File Explorer window.
+	</p>
+
+	<p>The <span class="gb-purple">Demos</span>
+		button allows you to see a list of GameBeans demos. When you click one
+		it'll download directly into the app and you can explore and run it like
+		any other project.
+	</p>
+
+	<p>The <span class="gb-purple">Build</span> button builds your game into a
+		single .html file and downloads it. You can run the html file directly,
+		on a web hosting server or an online game portal such as itch.io. All
+		assets in your game are encoded directly into the file so there's no
+		external resource to worry about!
+	</p>
+
+
+	<h3>The Workspace</h3>
+
+	<p>The Workspace is the main, and central view in which you can view and edit your project's resources, such as; Objects, Sprites, Fonts, Sounds and Rooms. For this purpose it is the largest view.</p>
+
+
+	<h3>The Project View</h3>
+
+	<p>The Project View is the panel at the right-hand side of the IDE. It contains project wide resources and settings. The resources selected here open up in the Workspace view.</p>
+
+
+	<h3>The Context View</h3>
+
+	<p>The Context View changes depending on which kind of resource is opened in the Workspace. Opening an Object resource, for example, will show Events and Actions in the Context View. Whereas opening a Room will show the different Objects that you can place in it. Opening a Sprite or Sound resource, however, hides the Context View as they don't currently need it.</p>
+
+
+	<h3>The Console</h3>
+
+	<p>The Console is where messages are logged that supply you with helpful information in an unobtrusive way. It can show you the progress of a download, where and what errors occured, and generally just feedback of things so you know for sure they happened.</p>
+
+</body>
 
 </html>
