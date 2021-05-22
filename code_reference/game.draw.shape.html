@@ -13,6 +13,7 @@
 	<li><a href="#line">GAME.draw.shape.line()</a></li>
 	<li><a href="#ellipse">GAME.draw.shape.ellipse()</a></li>
 	<li><a href="#rectangle">GAME.draw.shape.rectangle()</a></li>
+	<li><a href="#healthBar">GAME.draw.shape.healthBar()</a></li>
 </ul>
 
 <!--
@@ -30,9 +31,9 @@
 		<li><b>color</b> - The color of the line, defaults to global drawing color.</li>
 	</ul></li>
 </ul>
-<code class="prettyprint">// draw a red line from a to b
+<code class="prettyprint">// Draw a green line from a to b.
 GAME.draw.shape.line(a.x, a.y, b.x, b.y, {
-	color: "#FF0000"
+	color: "green"
 });</code>
 
 
@@ -51,28 +52,18 @@ GAME.draw.shape.line(a.x, a.y, b.x, b.y, {
 		<li><b>color</b> - The color of the ellipse, defaults to global drawing color.</li>
 		<li><b>fill</b> - Should the ellipse be filled or stroked.</li>
 		<li><b>lineWidth</b> - The width of the stroke, if stroke is used.</li>
-		<li><b>healthbar</b> - OPTIONAL object for using the shape as a healthbar.</li>
-		<li><ul>
-			<li><b>amount</b> - Fraction representing the amount the healthbar should be filled, with 0 being empty and 1 being full.</li>
-			<li><b>color</b> - The main color, defaults to green.</li>
-			<li><b>background</b> - The background color, defaults to red.</li>
-		</ul></li>
 	</ul></li>
 </ul>
-<code class="prettyprint">// draw a healthbar
+<code class="prettyprint">// Draw a red circle.
 GAME.draw.shape.ellipse(320, 240, 100, 50, {
-    healthbar: {
-        amount: this.health / this.maxHealth,
-        color: "#FFFFFF",
-        background: "#000000"
-    }
+	color: "red"
 });</code>
 
 
 <!--
 -->
 <h3 id="rectangle">GAME.draw.shape.rectangle(x, y, w, h, options)</h3>
-<p>Draws elliptical shapes, like ovals and circles.</p>
+<p>Draws reactangles.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>x</b> - The X position.</li>
@@ -81,25 +72,31 @@ GAME.draw.shape.ellipse(320, 240, 100, 50, {
 	<li><b>h</b> - The height.</li>
 	<li><b>options</b> - OPTIONAL object with advanced parameters.</li>
 	<li><ul>
-		<li><b>color</b> - The color of the ellipse, defaults to global drawing color.</li>
+		<li><b>color</b> - The color of the rectangle, defaults to global drawing color.</li>
 		<li><b>fill</b> - Should the ellipse be filled or stroked.</li>
 		<li><b>lineWidth</b> - The width of the stroke, if stroke is used.</li>
-		<li><b>healthbar</b> - OPTIONAL object for using the shape as a healthbar.</li>
-		<li><ul>
-			<li><b>amount</b> - Fraction representing the amount the healthbar should be filled, with 0 being empty and 1 being full.</li>
-			<li><b>color</b> - The main color, defaults to green.</li>
-			<li><b>background</b> - The background color, defaults to red.</li>
-		</ul></li>
 	</ul></li>
 </ul>
-<code class="prettyprint">// draw a healthbar
-GAME.draw.shape.rectangle(92, 28, 322, 10, {
-    healthbar: {
-        amount: this.health / this.maxHealth,
-        color: "#FFFFFF",
-        background: "#000000"
-    }
+<code class="prettyprint">// Draw a blue rectangle.
+GAME.draw.shape.rectangle(92, 28, 322, 10{
+	color: "blue"
 });</code>
+
+<!--
+-->
+<h3 id="healthBar">GAME.draw.shape.healthBar(x, y, w, h, options)</h3>
+<p>Draws rectangular healthbars.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>x</b> - The X position.</li>
+	<li><b>y</b> - The Y position.</li>
+	<li><b>w</b> - The width.</li>
+	<li><b>h</b> - The height.</li>
+	<li><b>amount</b> - The amount of health, out of 100.</li>
+	<li><b>color</b> - The color to draw the "healthy" part of the bar.</li>
+	<li><b>background</b> - the color to draw the "damaged" part of the bar.</li>
+</ul>
+<code class="prettyprint">GAME.draw.shape.healthBar(92, 28, 322, 10, health, "lime", "red");</code>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
