@@ -1,41 +1,164 @@
 <!DOCTYPE html>
-
 <html>
+<head>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
 
-	<head>
-		<link rel="stylesheet" href="../style.css">
-	</head>
+<h1>Events</h1>
 
-	<body>
+<p>
+Events are a group of actions within an Object that execute at a particular
+time. Events can range from game loop moments like Step and Draw, to inputs and
+collisions between Objects.
+</p>
 
-		<h1>Events</h1>
+<h2>Contents:</h2>
+<ul>
+	<li><a href="#create">Create</a></li>
+	<li><a href="#destroy">Destroy</a></li>
+	<li><a href="#step">Step</a></li>
+	<li><a href="#draw">Draw</a></li>
+	<li><a href="#collision">Collision</a></li>
+	<li><a href="#room-enter">Room Enter</a></li>
+	<li><a href="#room-leave">Room Leave</a></li>
+	<li><a href="#outside-room">Outside Room</a></li>
+	<li><a href="#keyboard">Keyboard</a></li>
+	<li><a href="#mouse">Mouse</a></li>
+	<li><a href="#resize">Resize</a></li>
+</ul>
 
-		<p>
-		Events are a group of actions within an Object that execute at a particular time.
-		Events can range from game loop moments like Step and Draw, to inputs and collisions between Objects.
-		</p>
+<h2>Game</h2>
 
-		<h4>Events:</h4>
-		<p>These are the events, in their logical categories, currently available.</p>
-		<ul>
-			<li><b>Game</b><ul>
-				<li><b>Create</b> - Executed when a new instance of the Object is created.</li>
-				<li><b>Destroy</b> - Executed when the instance is destroyed via the Destroy action.</li>
-				<li><b>Step</b> - Executed within the game logic loop, by default this should execute 60 times a second.</li>
-				<li><b>Draw</b> - Used for drawing. Executed when a new frame is about to be rendered, as such this event can run a variable number of times a second so it should not be used for game logic!</li>
-				<li><b>Collision</b> - Executed when the current instance collides with another instance of a given a Object.</li>
-				<li><b>Room Enter</b> - Executed after the game enters a new room.</li>
-				<li><b>Room Leave</b> - Executed before the game leaves the current room.</li>
-			</ul></li>
-			<li><b>Input</b><ul>
-				<li><b>Keyboard</b> - Executed when the given Keyboard key is in the given state.</li>
-				<li><b>Mouse</b> - Executed when the given Mouse button is in the given state.</li>
-			</ul></li>
-			<li><b>App</b><ul>
-				<li><b>Resize</b> - Executed when the window/browser resizes.</li>
-			</ul></li>
-		</ul>
+<div id="create" class="row">
+	<img class="icon" src="images/event_create.png"/>
+	<h3>Create</h3>
+</div>
+<p>
+	The Create event is executed when a new instance of the Object is created.<br>
+	In the case of an action such as Create Moving, the Create event is
+	executed AFTER the changes to the speed and direction properties so the
+	correct values will be present within the event.
+</p>
 
-	</body>
+<div id="destroy" class="row">
+	<img class="icon" src="images/event_destroy.svg"/>
+	<h3>Destroy</h3>
+</div>
+<p>
+	The Destroy event is executed when the instance is destroyed by the Destroy
+	action. This can be useful for changing the score when you kill an enemy, or
+	creating an explosion when a bomb is destroyed.
+</p>
 
+<div if="step" class="row">
+	<img class="icon" src="images/event_step.png"/>
+	<h3>Step</h3>
+</div>
+<p>
+	Executed within the game logic loop, by default this should execute 60 times
+	a second. There are 3 types of Step event; Normal, Begin and End.<br>
+	The Begin Step event is executed before all other Events.<br>
+	The Normal Step event is executed just before all instance properties are
+	updated, such as; speed, gravity, animation, etc. And before other events
+	like collisions and input.<br>
+	The End Step event is executed just before the drawing events, but after all
+	other events.
+</p>
+
+<div id="draw" class="row">
+	<img class="icon" src="images/event_draw.png"/>
+	<h3>Draw</h3>
+</div>
+<p>
+	Used for drawing. Executed when a new frame is about to be rendered, as such
+	this event can run a variable number of times a second so it should not be
+	used for game logic! There are 2 types of Draw event; Normal and GUI.<br>
+	The Normal Draw event is where' most drawing takes place, it's aware of any
+	transformations such as cameras, and will handle correct drawing for you.<br>
+	The GUI Draw event happens after the Normal Draw event and disables any
+	transformations and scaling. As such if a sprite is drawn at 0, 0 then it
+	will be drawn at 0, 0 in the window regardless of any cameras. This makes it
+	perfect for drawing user interfaces.
+</p>
+
+<div id="collision" class="row">
+	<img class="icon" src="images/event_collision.png"/>
+	<h3>Collision</h3>
+</div>
+<p>
+	Executed when the current instance collides with another instance of a given
+	a Object. The keywords "all" and "solid" can also be used to select those
+	groups of instances. An instance can NOT collide with itself, but it can
+	collide with other instances of the same object as it.
+</p>
+
+<div id="room-enter" class="row">
+	<img class="icon" src="images/event_room_enter.svg"/>
+	<h3>Room Enter</h3>
+</div>
+<p>
+	The Room Enter event is executed for all instances that initially exist in
+	a room or instances that are persistent between rooms, when a room is
+	entered.
+</p>
+
+<div id="room-leave" class="row">
+	<img class="icon" src="images/event_room_leave.svg"/>
+	<h3>Room Leave</h3>
+</div>
+<p>
+	The Room Leave event is executed for all instances that exist before moving
+	to another room.
+</p>
+
+<div id="outside-room" class="row">
+	<img class="icon" src="images/event_outside_room.svg"/>
+	<h3>Outside Room</h3>
+</div>
+<p>
+	The Outside Room event is executed when the instance lies completely outside
+	the bounds of the room. This can be useful for deleting instances like
+	bullets that leave the game area.
+</p>
+
+
+<h2>Input</h2>
+<p>These are events triggered directly my human interaction.</p>
+
+<div id="keyboard" class="row">
+	<img class="icon" src="images/event_keyboard.png"/>
+	<h3>Keyboard</h3>
+</div>
+<p>
+	Executed when the given Keyboard key is in the given state. There is a wide
+	selection of keys available. And three states for each; Press, Release and
+	Hold.<br>
+	Press events execute when the key is first pressed down.<br>
+	Down events execute for each game step in which the key remains down.<br>
+	Release events execute when the key stops being held down/is released.
+</p>
+
+<div id="mouse" class="row">
+	<img class="icon" src="images/event_mouse.svg"/>
+	<h3>Mouse</h3>
+</div>
+<p>
+	Executed when the given Mouse button is in the given state. The three main
+	buttons are represented; Left, Right and Middle. All of which have three
+	states which can be checked; Down, Press and Release.<br>
+	There is also the WheelUp and WheelDown even types, which don't have states
+	and just execute when the mouse wheel is turned.
+</p>
+
+
+<h2>Game</h2>
+
+<div id="resize" class="row">
+	<img class="icon" src="images/event_resize.svg"/>
+	<h3>Resize</h3>
+</div>
+<p>Executed when the window/browser resizes.</p>
+
+</body>
 </html>

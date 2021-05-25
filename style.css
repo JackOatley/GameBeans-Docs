@@ -7,8 +7,17 @@ body {
 	color: #555555;
 }
 
-p {
-	margin: 8px 0px 8px 0px;
+.row {
+	display: flex;
+	align-items: center;
+}
+.row h3 {
+	margin: 0px 0px 0px 8px;
+}
+
+.icon {
+	width: 32px;
+	height: 32px;
 }
 
 h1 {
@@ -88,9 +97,9 @@ code.show {
 	color: #FFFFFF;
 	border-radius: 10px;
 }
-.constructor { background: #FF6666; }
+/*.constructor { background: #FF6666; }
 .method { background: #FFC500; }
-.static { background: #C06FFF; }
+.static { background: #C06FFF; }*/
 
 #main {
 	display: flex;
