@@ -12,19 +12,19 @@
 <h2>Contents:</h2>
 <ul>
 	<li><a href="#constructor">GAME.Room</a></li>
-	<li><a href="#create">GAME.Room.create</a></li>
-	<li><a href="#enter">GAME.Room.enter</a></li>
-	<li><a href="#next">GAME.Room.next</a></li>
-	<li><a href="#previous">GAME.Room.previous</a></li>
-	<li><a href="#setBackground">GAME.Room.setBackground</a></li>
-	<li><a href="#addInstance">GAME.Room.addInstance</a></li>
-	<li><a href="#draw">GAME.Room.draw</a></li>
-	<li><a href="#get">GAME.Room.get</a></li>
+	<li><a href="#create">create</a></li>
+	<li><a href="#enter">enter</a></li>
+	<li><a href="#next">next</a></li>
+	<li><a href="#previous">previous</a></li>
+	<li><a href="#setBackground">setBackground</a></li>
+	<li><a href="#addInstance">addInstance</a></li>
+	<li><a href="#draw">draw</a></li>
+	<li><a href="#getByName">getByName</a></li>
 </ul>
 
 <!--
 -->
-<h3 id="constructor">GAME.Room( name, width, height )</h3>
+<h3 id="constructor">GAME.Room(name, width, height)</h3>
 <p>Create a new room.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -32,7 +32,7 @@
 	<li><b>width</b> - The width of the new room.</li>
 	<li><b>height</b> - The height of the new room.</li>
 </ul>
-<code class="prettyprint">// Create a new room
+<code class="prettyprint">// Create a new room.
 var newRoom = new GAME.Room("rmNewRoom", 640, 480);
 </code>
 
@@ -60,8 +60,6 @@ const newRoom = GAME.Room.create("rmNewRoom", 640, 480);
 </ul>
 <code class="prettyprint">// Go to another room.
 GAME.Room.enter(rmLevel2);
-// or
-GAME.Room.enter("rmLevel2");
 
 // As method
 rmLevel2.enter();
@@ -137,16 +135,15 @@ GAME.Room.draw(rmNewRoom);</code>
 
 <!--
 -->
-<h3 id="get">GAME.Room.get(room)</h3>
+<h3 id="getByName">GAME.Room.getByName(roomName)</h3>
 <p>Returns the resource object of the current room by it's string name. With this object you can access various properties of the room, and even change them directly. Care needs to be taken when dealing with resource objects directly.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>room</b> - The name of the room to get.</li>
 </ul>
-<code class="prettyprint">// Get current room size
-var room = GAME.Room.get("rmLevel2");
-var width = room.width;
-var height = room.height;
+<code class="prettyprint">// Get a room by it's name.
+const level = 2;
+const nextLevel = GAME.Room.getByName("rmLevel" + level);
 </code>
 
 

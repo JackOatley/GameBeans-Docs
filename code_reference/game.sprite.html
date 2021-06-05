@@ -13,16 +13,16 @@ GAME.sprite.addFrame("sprMySprite", { src: "link.to/image.png" });</code>
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#create">GAME.sprite.create</a></li>
-	<li><a href="#addFrame">GAME.sprite.addFrame</a></li>
-	<li><a href="#setOrigin">GAME.sprite.setOrigin</a></li>
-	<li><a href="#tint">GAME.sprite.tint</a></li>
-	<li><a href="#fade">GAME.sprite.fade</a></li>
-	<li><a href="#restore">GAME.sprite.restore</a></li>
-	<li><a href="#cache">GAME.sprite.cache</a></li>
-	<li><a href="#toCanvas">GAME.sprite.toCanvas</a></li>
-	<li><a href="#getPixel">GAME.sprite.getPixel</a></li>
-	<li><a href="#get">GAME.sprite.get</a></li>
+	<li><a href="#create">create</a></li>
+	<li><a href="#addFrame">addFrame</a></li>
+	<li><a href="#setOrigin">setOrigin</a></li>
+	<li><a href="#tint">tint</a></li>
+	<li><a href="#fade">fade</a></li>
+	<li><a href="#restore">restore</a></li>
+	<li><a href="#cache">cache</a></li>
+	<li><a href="#toCanvas">toCanvas</a></li>
+	<li><a href="#getPixel">getPixel</a></li>
+	<li><a href="#getByName">getByName</a></li>
 </ul>
 
 <!--
@@ -129,9 +129,9 @@ Restores the sprite to it original state, reverting any changes such as tint or
 fade.
 </p>
 <code class="prettyprint">// Restore sprite.
-GAME.sprite.restore(sprPlayer); // Using resource directly.
-GAME.sprite.restore("sprPlayer2"); // Or using resource name.
-sprPlayer.restore(); // Or as a method.</code>
+GAME.sprite.restore(sprPlayer);
+</code><code class="prettyprint">// Restore sprite with method.
+sprPlayer.restore();</code>
 
 
 <!--
@@ -194,14 +194,14 @@ var color = sprPlayer.getPixel(0, 16, 16); // Method.</code>
 
 <!--
 -->
-<h3 id="get">GAME.sprite.get(sprite)</h3>
+<h3 id="getByName">GAME.sprite.getByName(sprite)</h3>
 <p>Returns the actual resource object of the sprite with the given name.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>sprite</b> - Sprite resource or name.</li>
+	<li><b>sprite</b> - Sprite name.</li>
 </ul>
 <code class="prettyprint">// Get it.
-var spriteObject = GAME.sprite.get("sprPlayer");</code>
+var spriteObject = GAME.sprite.getByName("sprPlayer");</code>
 
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

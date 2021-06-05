@@ -16,8 +16,8 @@
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#create">GAME.camera.create()</a></li>
-	<li><a href="#update">GAME.camera.update()</a></li>
+	<li><a href="#create">create()</a></li>
+	<li><a href="#update">update()</a></li>
 </ul>
 
 <!--
@@ -39,8 +39,8 @@
 GAME.camera.create({
 	follow: global.player
 });
-
-// follow 2 instances (camera placed at an average of their positions (in-between))
+</code>
+<code class="prettyprint">// follow 2 instances (camera placed at an average of their positions (in-between))
 // note: "follow" takes multiple instances wrapped in an array
 GAME.camera.create({
 	follow: [
@@ -48,8 +48,8 @@ GAME.camera.create({
 		global.player2
 	]
 });
-
-// follow 2 instances, with weighting
+</code>
+<code class="prettyprint">// follow 2 instances, with weighting
 // note: weighting requires that the instance and it's weight be wrapped in an array
 // "2" is like saying "weighted as if there's 2 of this instance"
 GAME.camera.create({
@@ -58,8 +58,8 @@ GAME.camera.create({
 		global.player2
 	]
 });
-
-// same result as above, but this time using fractions
+</code>
+<code class="prettyprint">// same result as above, but this time using fractions
 GAME.camera.create({
 	follow: [
 		[global.player1, 0.66],

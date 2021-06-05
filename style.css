@@ -15,6 +15,21 @@ body {
 	margin: 0px 0px 0px 8px;
 }
 
+.table {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.table-cell {
+	flex-grow: 1;
+	width: 40%;
+	min-width: 700px;
+	padding: 20px;
+}
+.table-cell:hover {
+	background: #EEE;
+}
+
 .icon {
 	width: 32px;
 	height: 32px;

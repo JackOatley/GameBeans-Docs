@@ -27,7 +27,7 @@
 	<li><b>options</b> - OPTIONAL.</li>
 		<ul>
 		<li><b>points</b> - An array of points that make up the primitive.</li>
-		<li><b>texture</b> - A Sprite resource as an object or string name.</li>
+		<li><b>texture</b> - A Sprite resource.</li>
 		<li><b>color</b> - The color (in absense of a texture) of the primitive.</li>
 		<li><b>format</b> - The format of the array of points.</li>
 		<li><b>modifier</b> - A modifier function that can be used to effect the points during drawing.</li>
@@ -35,9 +35,9 @@
 		<li><b>y</b> - Y position of the whole primitive.</li>
 		</ul>
 </ul>
-<code class="prettyprint">// Create primitive from data
+<code class="prettyprint">// Create primitive from data.
 this.shape = new GAME.Primitive({
-	texture: "sprTexture",
+	texture: sprTexture,
 	format: "quads",
 	points: points,
 	modifier: modifier

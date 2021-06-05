@@ -11,11 +11,11 @@
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#constructor">GAME.Font()</a></li>
-	<li><a href="#getCss">GAME.Font.getCss()</a></li>
-	<li><a href="#applyCss">GAME.Font.applyCss()</a></li>
-	<li><a href="#convertToBitmapFont">GAME.Font.convertToBitmapFont()</a></li>
-	<li><a href="#get">GAME.Font.get()</a></li>
+	<li><a href="#constructor">create()</a></li>
+	<li><a href="#getCss">getCss()</a></li>
+	<li><a href="#applyCss">applyCss()</a></li>
+	<li><a href="#convertToBitmapFont">convertToBitmapFont()</a></li>
+	<li><a href="#getByName">getByName()</a></li>
 </ul>
 
 <!--
@@ -102,13 +102,13 @@ fntMyFont.convertToBitmapFont(options);</code>
 
 <!--
 -->
-<h3 id="get">GAME.Font.get(name)</h3>
+<h3 id="getByName">GAME.Font.getByName(name)</h3>
 <p>Returns the font resource of the given name.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>name</b> - The string name of the font to get.</li>
 </ul>
-<code class="prettyprint">var font = GAME.Font.get("fntMyFont");</code>
+<code class="prettyprint">var font = GAME.Font.getByName("fntMyFont");</code>
 
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

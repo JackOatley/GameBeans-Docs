@@ -14,13 +14,13 @@
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#create">GAME.instance.create</a></li>
-	<li><a href="#createMoving">GAME.instance.createMoving</a></li>
-	<li><a href="#destroy">GAME.instance.destroy</a></li>
-	<li><a href="#count">GAME.instance.count</a></li>
-	<li><a href="#mouseOn">GAME.instance.mouseOn</a></li>
-	<li><a href="#find">GAME.instance.find</a></li>
-	<li><a href="#findRandom">GAME.instance.findRandom</a></li>
+	<li><a href="#create">create</a></li>
+	<li><a href="#createMoving">createMoving</a></li>
+	<li><a href="#destroy">destroy</a></li>
+	<li><a href="#count">count</a></li>
+	<li><a href="#mouseOn">mouseOn</a></li>
+	<li><a href="#find">find</a></li>
+	<li><a href="#findRandom">findRandom</a></li>
 </ul>
 
 <!--
@@ -33,8 +33,8 @@
 	<li><b>x</b> - The X position, as a number, to create the instance.</li>
 	<li><b>y</b> - The Y position, as a number, to create the instance.</li>
 </ul>
-<code class="prettyprint">// create the player in the middle of the room
-GAME.instance.create( "objPlayer", 320, 240 );</code>
+<code class="prettyprint">// Create the player in the middle of the room.
+GAME.instance.create(objPlayer, 320, 240);</code>
 
 
 <!--
@@ -65,7 +65,7 @@ GAME.instance.createMoving(objPlayer, 320, 240, 10, 90);</code>
 GAME.instance.destroy(this);
 
 // destroy the other instance in a collision event
-GAME.instance.destroy("other");
+GAME.instance.destroy(other);
 
 // destroy the first found instance of the given object
 var inst = GAME.instance.find(objSomeObject, 0);
@@ -93,7 +93,7 @@ console.log("Number of instances: " + count)</code>
 <ul>
 	<li><b>inst</b> - The instance to check.</li>
 </ul>
-<code class="prettyprint">// hovering...
+<code class="prettyprint">// Hovering...
 if (GAME.instance.mouseOn(this))
 	console.log("hovering...");</code>
 
@@ -107,7 +107,7 @@ if (GAME.instance.mouseOn(this))
 	<li><b>object</b> - The object, as a string, to find an instance of.</li>
 	<li><b>index</b> - The index, as an integer, of the instance.</li>
 </ul>
-<code class="prettyprint">// find the first instance of the object and log it's position in the browser console
+<code class="prettyprint">// Find the first instance of the object and log it's position in the browser console.
 const inst = GAME.instance.find(objSomeObject, 0);
 console.log(inst.x, inst.y)</code>
 
@@ -119,7 +119,7 @@ console.log(inst.x, inst.y)</code>
 <ul>
 	<li><b>object</b> - The object, as a string, to find an instance of.</li>
 </ul>
-<code class="prettyprint">// find any instance of the object and log it's position in the browser console
+<code class="prettyprint">// Find any instance of the object and log it's position in the browser console.
 var inst = GAME.instance.findRandom(objSomeObject);
 console.log(inst.x, inst.y)</code>
 

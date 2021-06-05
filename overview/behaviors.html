@@ -5,17 +5,68 @@
 	<head>
 		<link rel="stylesheet" href="../style.css">
 	</head>
-	
+
 	<body>
-	
-		<h1>Behaviors</h1>
-		
+
+		<h1>Behaviours</h1>
+
 		<p>
-		Behaviors are a simple way to create common functionality.
-		They are a high level concept that combine both Events and Actions behind the scenes.
-		Behaviors can expose a few key parameters to allow you to tweak how they work.
+		Behaviours encapsulate common functionality, allowing you to assign such
+		to an object without having to "reinvent the wheel" each time.
 		</p>
-		
+
+		<h2>Contents:</h2>
+		<ul>
+			<li><a href="#4_way_movement">4-Way Movement</a></li>
+			<li><a href="#8_way_movement">8-Way Movement</a></li>
+			<li><a href="#bound_to_room">Bound To Room</a></li>
+		</ul>
+
+		<h2>Game</h2>
+
+		<div class="table">
+
+		<div class="table-cell">
+		<div id="4_way_movement" class="row">
+			<img class="icon" src="images/behaviour_4_way_movement.svg"/>
+			<h3>4-Way Movement</h3>
+		</div>
+		<p>
+			Give the object 4 way movement, either through Arrow Keys or WASD.
+			<br>The object will not be able to move diagonally even if holding
+			up and right keys, for example.
+		</p>
+		</div>
+
+		<div class="table-cell">
+		<div id="8_way_movement" class="row">
+			<img class="icon" src="images/behaviour_8_way_movement.svg"/>
+			<h3>8-Way Movement</h3>
+		</div>
+		<p>
+			Give the object 8 way movement, either through Arrow Keys or WASD.
+			The object will move diagonally when a vertical and horizonatal key
+			are held simultaneously.
+		</p>
+		</div>
+
+		<div class="table-cell">
+		<div id="bound_to_room" class="row">
+			<img class="icon" src="images/behaviour_bound_to_room.png"/>
+			<h3>Bound To Room</h3>
+		</div>
+		<p>
+			Bind the objeect to the room, preventing it from leaving the room's
+			bounds. If the object tries to move move out of the romo bounds then
+			it will be placed back enough to be touching the room bounds. This
+			happens during the End Step.
+		</p>
+		</div>
+
+		<div class="table-cell"></div>
+
+	</div>
+
 	</body>
 
 </html>

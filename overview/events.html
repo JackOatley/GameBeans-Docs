@@ -30,6 +30,9 @@ collisions between Objects.
 
 <h2>Game</h2>
 
+<div class="table">
+
+<div class="table-cell">
 <div id="create" class="row">
 	<img class="icon" src="images/event_create.png"/>
 	<h3>Create</h3>
@@ -40,7 +43,9 @@ collisions between Objects.
 	executed AFTER the changes to the speed and direction properties so the
 	correct values will be present within the event.
 </p>
+</div>
 
+<div class="table-cell">
 <div id="destroy" class="row">
 	<img class="icon" src="images/event_destroy.svg"/>
 	<h3>Destroy</h3>
@@ -49,8 +54,9 @@ collisions between Objects.
 	The Destroy event is executed when the instance is destroyed by the Destroy
 	action. This can be useful for changing the score when you kill an enemy, or
 	creating an explosion when a bomb is destroyed.
-</p>
+</p></div>
 
+<div class="table-cell">
 <div if="step" class="row">
 	<img class="icon" src="images/event_step.png"/>
 	<h3>Step</h3>
@@ -64,8 +70,9 @@ collisions between Objects.
 	like collisions and input.<br>
 	The End Step event is executed just before the drawing events, but after all
 	other events.
-</p>
+</p></div>
 
+<div class="table-cell">
 <div id="draw" class="row">
 	<img class="icon" src="images/event_draw.png"/>
 	<h3>Draw</h3>
@@ -80,8 +87,9 @@ collisions between Objects.
 	transformations and scaling. As such if a sprite is drawn at 0, 0 then it
 	will be drawn at 0, 0 in the window regardless of any cameras. This makes it
 	perfect for drawing user interfaces.
-</p>
+</p></div>
 
+<div class="table-cell">
 <div id="collision" class="row">
 	<img class="icon" src="images/event_collision.png"/>
 	<h3>Collision</h3>
@@ -91,8 +99,9 @@ collisions between Objects.
 	a Object. The keywords "all" and "solid" can also be used to select those
 	groups of instances. An instance can NOT collide with itself, but it can
 	collide with other instances of the same object as it.
-</p>
+</p></div>
 
+<div class="table-cell">
 <div id="room-enter" class="row">
 	<img class="icon" src="images/event_room_enter.svg"/>
 	<h3>Room Enter</h3>
@@ -101,8 +110,9 @@ collisions between Objects.
 	The Room Enter event is executed for all instances that initially exist in
 	a room or instances that are persistent between rooms, when a room is
 	entered.
-</p>
+</p></div>
 
+<div class="table-cell">
 <div id="room-leave" class="row">
 	<img class="icon" src="images/event_room_leave.svg"/>
 	<h3>Room Leave</h3>
@@ -110,8 +120,9 @@ collisions between Objects.
 <p>
 	The Room Leave event is executed for all instances that exist before moving
 	to another room.
-</p>
+</p></div>
 
+<div class="table-cell">
 <div id="outside-room" class="row">
 	<img class="icon" src="images/event_outside_room.svg"/>
 	<h3>Outside Room</h3>
@@ -120,12 +131,17 @@ collisions between Objects.
 	The Outside Room event is executed when the instance lies completely outside
 	the bounds of the room. This can be useful for deleting instances like
 	bullets that leave the game area.
-</p>
+</p></div>
+
+</div>
 
 
 <h2>Input</h2>
 <p>These are events triggered directly my human interaction.</p>
 
+<div class="table">
+
+<div class="table-cell">
 <div id="keyboard" class="row">
 	<img class="icon" src="images/event_keyboard.png"/>
 	<h3>Keyboard</h3>
@@ -138,7 +154,9 @@ collisions between Objects.
 	Down events execute for each game step in which the key remains down.<br>
 	Release events execute when the key stops being held down/is released.
 </p>
+</div>
 
+<div class="table-cell">
 <div id="mouse" class="row">
 	<img class="icon" src="images/event_mouse.svg"/>
 	<h3>Mouse</h3>
@@ -150,15 +168,26 @@ collisions between Objects.
 	There is also the WheelUp and WheelDown even types, which don't have states
 	and just execute when the mouse wheel is turned.
 </p>
+</div>
+
+</div>
 
 
 <h2>Game</h2>
 
+<div class="table">
+
+<div class="table-cell">
 <div id="resize" class="row">
 	<img class="icon" src="images/event_resize.svg"/>
 	<h3>Resize</h3>
 </div>
 <p>Executed when the window/browser resizes.</p>
+</div>
+
+<div class="table-cell"></div>
+
+</div>
 
 </body>
 </html>
