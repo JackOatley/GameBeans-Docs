@@ -25,11 +25,11 @@
 
 <!--
 -->
-<h3 id="create">GAME.instance.create(object, x, y)</h3>
-<p>Creates a new instance of an object.</p>
+<h3 id="create">GAME.instance.create(gameObject, x, y)</h3>
+<p>Creates a new instance of a GameObject.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>object</b> - The name of the object of which to create an instance of.</li>
+	<li><b>object</b> - The name or reference of a GameObject of which to create an instance of.</li>
 	<li><b>x</b> - The X position, as a number, to create the instance.</li>
 	<li><b>y</b> - The Y position, as a number, to create the instance.</li>
 </ul>
@@ -39,7 +39,7 @@ GAME.instance.create(objPlayer, 320, 240);</code>
 
 <!--
 -->
-<h3 id="createMoving">GAME.instance.createMoving(object, x, y, speed, direction)</h3>
+<h3 id="createMoving">GAME.instance.createMoving(gameObject, x, y, speed, direction)</h3>
 <p>Creates a new instance of an object, and starts it moving at speed in a direction.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -59,7 +59,7 @@ GAME.instance.createMoving(objPlayer, 320, 240, 10, 90);</code>
 <p>Destroys the given instance.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>inst</b> - The instance object to be destroyed. This parameter can also be the <span class="gb-green">this</span> keyword, or the string "other" in the case of a collision event.</li>
+	<li><b>inst</b> - The instance to be destroyed. This parameter can also be the <span class="gb-green">this</span> keyword, or the string "other" in the case of a collision event.</li>
 </ul>
 <code class="prettyprint">// destroy the calling instance
 GAME.instance.destroy(this);
@@ -67,18 +67,18 @@ GAME.instance.destroy(this);
 // destroy the other instance in a collision event
 GAME.instance.destroy(other);
 
-// destroy the first found instance of the given object
+// destroy the first found instance of the given GameObject
 var inst = GAME.instance.find(objSomeObject, 0);
 GAME.instance.destroy(inst);</code>
 
 
 <!--
 -->
-<h3 id="count">GAME.instance.count(object)</h3>
+<h3 id="count">GAME.instance.count(gameObject)</h3>
 <p>Returns the number of instances of the given object that currently exist.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>object</b> - An object, as a string.</li>
+	<li><b>object</b> - A GameObject, as a string or reference.</li>
 </ul>
 <code class="prettyprint">// How many instances are there?
 var count = GAME.instance.count(objSomeObject);
@@ -95,16 +95,18 @@ console.log("Number of instances: " + count)</code>
 </ul>
 <code class="prettyprint">// Hovering...
 if (GAME.instance.mouseOn(this))
-	console.log("hovering...");</code>
+{
+	console.log("hovering...");
+}</code>
 
 
 <!--
 -->
 <h3 id="find">GAME.instance.find(object, index)</h3>
-<p>Finds and returns the Nth instance of an object.</p>
+<p>Finds and returns the Nth instance of a GameObject.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>object</b> - The object, as a string, to find an instance of.</li>
+	<li><b>object</b> - A GameObject, as a string or reference, to find an instance of.</li>
 	<li><b>index</b> - The index, as an integer, of the instance.</li>
 </ul>
 <code class="prettyprint">// Find the first instance of the object and log it's position in the browser console.

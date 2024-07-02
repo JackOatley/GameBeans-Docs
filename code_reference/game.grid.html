@@ -13,19 +13,20 @@
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#constructor">GAME.Grid()</a></li>
-	<li><a href="#create">GAME.Grid.create</a></li>
-	<li><a href="#get">GAME.Grid.get</a></li>
-	<li><a href="#set">GAME.Grid.set</a></li>
-	<li><a href="#add">GAME.Grid.add</a></li>
-	<li><a href="#multiply">GAME.Grid.multiply</a></li>
-	<li><a href="#clear">GAME.Grid.clear</a></li>
-	<li><a href="#destroy">GAME.Grid.destroy</a></li>
+	<li><h4>Constructors</h4></li>
+	<li><a href="#constructor">Grid</a></li>
+	<li><h4>Public Methods</h4></li>
+	<li><a href="#get">get</a></li>
+	<li><a href="#set">set</a></li>
+	<li><a href="#add">add</a></li>
+	<li><a href="#multiply">multiply</a></li>
+	<li><a href="#clear">clear</a></li>
+	<li><a href="#destroy">destroy</a></li>
 </ul>
 
 <!--
 -->
-<h3 id="constructor">GAME.Grid(width, height, options)</h3>
+<h3 id="constructor">Grid(width, height, options)</h3>
 <p>Creates a new grid.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -36,40 +37,26 @@
 		<li><b>value</b> - Default value that the grid should be cleared to.</li>
 	</ul>
 </ul>
-<code class="prettyprint">// Create a new grid with every cell set to 10
-var myGrid = new GAME.Grid(64, 64, {
+<code class="prettyprint">cont myGrid = new GAME.Grid(64, 64, {
 	value: 10
 });</code>
 
 
 <!--
 -->
-<h3 id="create">GAME.Grid.create(width, height, options)</h3>
-<p>See Constructor for details.</p>
-<code class="prettyprint">// Create a new grid with every cell set to 10
-var myGrid = new GAME.Grid.create(64, 64, {
-	value: 10
-});</code>
-
-
-<!--
--->
-<h3 id="get">GAME.Grid.get(x, y)</h3>
+<h3 id="get">get(x, y)</h3>
 <p>Gets the value of the grid cell at the given position.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>x</b> - The X position.</li>
 	<li><b>y</b> - The Y position.</li>
 </ul>
-<code class="prettyprint">// Get a value
-var myVal = myGrid.get(16, 32);
-
-// Get a value, static function
-var myVal = GAME.Grid.get(myGrid, 16, 32);</code>
+<code class="prettyprint">const myVal = myGrid.get(16, 32);
+</code>
 
 <!--
 -->
-<h3 id="set">GAME.Grid.set(x, y, value)</h3>
+<h3 id="set">set(x, y, value)</h3>
 <p>Sets the value of the grid cell at the given position.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -77,15 +64,12 @@ var myVal = GAME.Grid.get(myGrid, 16, 32);</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to set.</li>
 </ul>
-<code class="prettyprint">// Set a value
-myGrid.set(16, 32, 20);
-
-// Set a value, static function
-GAME.Grid.set(myGrid, 16, 32, 20);</code>
+<code class="prettyprint">myGrid.set(16, 32, 20);
+</code>
 
 <!--
 -->
-<h3 id="add">GAME.Grid.add(x, y, value)</h3>
+<h3 id="add">add(x, y, value)</h3>
 <p>Adds the given value to the value of the grid cell at the given position.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -93,16 +77,13 @@ GAME.Grid.set(myGrid, 16, 32, 20);</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to add.</li>
 </ul>
-<code class="prettyprint">// Add a value
-myGrid.set(16, 32, 20);
+<code class="prettyprint">myGrid.set(16, 32, 20);
 myGrid.add(16, 32, 20); // Is now 40
-
-// Add a value, static function
-GAME.Grid.add(myGrid, 16, 32, 20); // And 60</code>
+</code>
 
 <!--
 -->
-<h3 id="multiply">GAME.Grid.multiply(x, y, value)</h3>
+<h3 id="multiply">multiply(x, y, value)</h3>
 <p>Multiplies the given value to the value of the grid cell at the given position.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -110,16 +91,13 @@ GAME.Grid.add(myGrid, 16, 32, 20); // And 60</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to multiply by.</li>
 </ul>
-<code class="prettyprint">// Multiply a value
-myGrid.set(16, 32, 20);
+<code class="prettyprint">myGrid.set(16, 32, 20);
 myGrid.multiply(16, 32, 4); // Is now 80
-
-// Multiply a value, static function
-GAME.Grid.multiply(myGrid, 16, 32, 2); // And 160</code>
+</code>
 
 <!--
 -->
-<h3 id="clear">GAME.Grid.clear(value)</h3>
+<h3 id="clear">clear(value)</h3>
 <p>Clears every cell in the grid to the given value.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -127,15 +105,12 @@ GAME.Grid.multiply(myGrid, 16, 32, 2); // And 160</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to multiply by.</li>
 </ul>
-<code class="prettyprint">// Clear the grid
-myGrid.clear(0);
-
-// Clear the grid, static function
-GAME.Grid.clear(myGrid, 0);</code>
+<code class="prettyprint">myGrid.clear(0);
+</code>
 
 <!--
 -->
-<h3 id="destroy">GAME.Grid.destroy()</h3>
+<h3 id="destroy">destroy()</h3>
 <p>Destroys the grid, allowing the memory to be reused.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -143,11 +118,8 @@ GAME.Grid.clear(myGrid, 0);</code>
 	<li><b>y</b> - The Y position.</li>
 	<li><b>value</b> - Value to multiply by.</li>
 </ul>
-<code class="prettyprint">// Destroy the grid
-myGrid.destroy();
-
-// Destroy the grid, static function
-GAME.Grid.destroy(myGrid);</code>
+<code class="prettyprint">myGrid.destroy();
+</code>
 
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

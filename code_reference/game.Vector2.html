@@ -7,97 +7,97 @@
 
 <h1>GAME.Vector2</h1>
 <p>
-	GAME.Vector2 is a constructable class object.
+	The Vector2 class represents a 2D Vector; a pair of values "x" and "y".<br>
+	2D Vectors can represets 2D positions, angles, velocities, etc.
 </p>
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#constructor">GAME.Vector2()</a></li>
-	<li><a href="#set">GAME.Vector2.set</a></li>
-	<li><a href="#copy">GAME.Vector2.copy</a></li>
-	<li><a href="#add">GAME.Vector2.add</a></li>
-	<li><a href="#mul">GAME.Vector2.mul</a></li>
-	<li><a href="#div">GAME.Vector2.div</a></li>
+	<li><h4>Constructors</h4></li>
+	<li><a href="#constructor1">Vector2(x, y)</a></li>
+	<li><a href="#constructor2">Vector2(vector2)</a></li>
+	<li><h4>Public Methods</h4></li>
+	<li><a href="#set">set</a></li>
+	<li><a href="#copy">copy</a></li>
+	<li><a href="#add">add</a></li>
+	<li><a href="#mul">mul</a></li>
+	<li><a href="#div">div</a></li>
 </ul>
+
+<br/><hr/><h2>Constructors</h2>
 
 <!--
 -->
-<h3 id="constructor">GAME.Vector2(x, y)</h3>
-<p>Creates a new Vector2.</p>
+<h3 id="constructor1">Vector2(x, y)</h3>
+<p>Creates a new Vector2 with the given values.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>x</b> - X component of the vector.</li>
 	<li><b>y</b> - Y component of the vector.</li>
 </ul>
-<code class="prettyprint">var point = new GAME.Vector2(25, 50);</code>
+<code class="prettyprint">const point = new GAME.Vector2(25, 50);</code>
 
+<h3 id="constructor2">Vector2(vector2)</h3>
+<p>Creates a new Vector2 with the values of another Vector2.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>vector2</b> - Another Vector2.</li>
+</ul>
+<code class="prettyprint">const point = new GAME.Vector2(target);</code>
+
+<br/><hr/><h2>Public Methods</h2>
 
 <!--
 -->
-<h3 id="set">GAME.Vector2.set(vec, x, y)</h3>
+<h3 id="set">set(x, y)</h3>
 <p>Sets the values of the given vector.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>vec</b> - The Vector2.</li>
 	<li><b>x</b> - X component of the vector.</li>
 	<li><b>y</b> - Y component of the vector.</li>
 </ul>
-<code class="prettyprint">GAME.Vector2.set(point, 12, 34);
-// or...
-point.set(12, 34);</code>
+<code class="prettyprint">point.set(12, 34);</code>
 
 
 <!--
 -->
-<h3 id="copy">GAME.Vector2.copy(vec1, vec2)</h3>
-<p>Copies the values of vec2 into vec1.</p>
+<h3 id="copy">copy(vec)</h3>
+<p>Copies the values from another Vector2 into the current Vector2.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>vec1</b> - The vector to the receive the copy.</li>
-	<li><b>vec2</b> - THe vector to have it's values copied.</li>
+	<li><b>vec</b> - The vector2 to copy the values of.</li>
 </ul>
-<code class="prettyprint">GAME.Vector2.copy(vec1, vec2);
-// or...
-vec1.copy(vec2);</code>
+<code class="prettyprint">point.copy(vec);</code>
 
 <!--
 -->
-<h3 id="add">GAME.Vector2.add(vec1, vec2)</h3>
-<p>Adds the values of vec2 to the values of vec1.</p>
+<h3 id="add">add(vec)</h3>
+<p>Adds the values of vec to the values of the current Vecto2.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>vec1</b> - The first vector.</li>
-	<li><b>vec2</b> - The second vector.</li>
+	<li><b>vec</b> - The vector to add.</li>
 </ul>
-<code class="prettyprint">GAME.Vector2.add(vec1, vec2);
-// or...
-vec1.add(vec2);</code>
+<code class="prettyprint">point.add(vec);</code>
 
 <!--
 -->
-<h3 id="mul">GAME.Vector2.mul(vec1, vec2)</h3>
-<p>Multiplies the values of vec1 by the values of vec2.</p>
+<h3 id="mul">mul(vec)</h3>
+<p>Multiplies the values of the current Vector2 by the values of vec.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>vec1</b> - The first vector.</li>
-	<li><b>vec2</b> - The second vector.</li>
+	<li><b>vec1</b> - The value to multiply by.</li>
 </ul>
-<code class="prettyprint">GAME.Vector2.mul(vec1, vec2);
-// or...
-vec1.mul(vec2);</code>
+<code class="prettyprint">point.mul(vec);</code>
 
 <!--
 -->
-<h3 id="div">GAME.Vector2.div(vec1, vec2)</h3>
-<p>Divides the values of vec1 by the values of vec2.</p>
+<h3 id="div">div(vec)</h3>
+<p>Divides the values of the current Vector2 by the values of vec.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>vec1</b> - The first vector.</li>
-	<li><b>vec2</b> - The second vector.</li>
+	<li><b>vec2</b> - The vector to divide by.</li>
 </ul>
-<code class="prettyprint">GAME.Vector2.div(vec1, vec2);
-// or...
-vec1.div(vec2);</code>
+<code class="prettyprint">point.div(vec);</code>
 
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

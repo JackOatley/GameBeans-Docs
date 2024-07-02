@@ -5,25 +5,33 @@
 </head>
 <body>
 
-<h1>GAME.camera</h1>
-
+<h1>GAME.Camera</h1>
 <p>
-	The GAME.camera object contains functions for dealing with cameras. Cameras
-	allow an easy and convenient way of moving around and seeing inside a room.
-	They can be assigned to follow an instance or even multiple instances!
+	The GAME.Camera object contains functions for dealing with cameras.
+	Cameras allow an easy and convenient way of moving around and seeing
+	inside a room. They can be assigned to follow an instance or even
+	multiple instances!
 </p>
 
 
-<h2>Contents:</h2>
+<br/><hr/><h2>Contents:</h2>
 <ul>
-	<li><a href="#create">create()</a></li>
-	<li><a href="#update">update()</a></li>
+	<li><h4>Constructors</h4></li>
+	<li><a href="#constructor">Camera</a></li>
+	<li><h4>Public Methods</h4></li>
+	<li><a href="#destroy">destroy</a></li>
+	<li><a href="#update">update</a></li>
+	<li><h4>Static Methods</h4></li>
+	<li><a href="#destroyAllCameras">destroyAllCameras</a></li>
+	<li><a href="#updateAllCameras">updateAllCameras</a></li>
 </ul>
+
+<br/><hr/><h2>Constructors</h2>
 
 <!--
 -->
-<h3 id="create">GAME.camera.create( options )</h3>
-<p>Creates a new camera. Takes a single options object. While it's possible to have multiple cameras, currently only the last created one has a visible effect as it just overwrites any previous camera changes. In the future, cameras will be able to be assigned to canvases, and thus act as a "view" into the room.</p>
+<h3 id="constructor">new GAME.Camera(options)</h3>
+<p>Creates a new camera. Takes a single optional options object. While it's possible to have multiple cameras, currently only the last created one has a visible effect as it just overwrites any previous camera changes. In the future, cameras will be able to be assigned to canvases, and thus act as a "view" into the room.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>options</b> - OPTIONAL. An object containing advanced parameters.</li>
@@ -31,53 +39,72 @@
 		<li><b>x</b> - The starting X position of the camera.</li>
 		<li><b>y</b> - The starting Y position of the camera.</li>
 		<li><b>follow</b> - The instance(s) for the camera to follow. See examples.</li>
-		<li><b>width</b> - The width of the camera. Defaults to current room width.</li>
-		<li><b>height</b> - The height of the camera. Defaults to current room height.</li>
+		<li><b>width</b> - The width of the camera. Defaults to the current main canvas width.</li>
+		<li><b>height</b> - The height of the camera. Defaults to the current main canvas height.</li>
 	</ul>
 </ul>
-<code class="prettyprint">// follow a single instance
-GAME.camera.create({
+<p>Follow a single instance.</p>
+<code class="prettyprint">new GAME.Camera({
 	follow: global.player
 });
 </code>
-<code class="prettyprint">// follow 2 instances (camera placed at an average of their positions (in-between))
-// note: "follow" takes multiple instances wrapped in an array
-GAME.camera.create({
-	follow: [
-		global.player1,
-		global.player2
-	]
+
+<p>Follow 2 instances with camera placed at an average of their positions.
+Note that "follow" takes multiple instances wrapped in an array.</p>
+<code class="prettyprint">new GAME.Camera({
+	follow: [global.player1, global.player2]
 });
 </code>
-<code class="prettyprint">// follow 2 instances, with weighting
-// note: weighting requires that the instance and it's weight be wrapped in an array
-// "2" is like saying "weighted as if there's 2 of this instance"
-GAME.camera.create({
-	follow: [
-		[global.player1, 2],
-		global.player2
-	]
+
+<p>Follow 2 instances, with weighting. Note that weighting requires that the
+instance and it's weight be wrapped in an array. For example; "2" is like saying
+"weighted as if there's 2 of this instance".</p>
+<code class="prettyprint">new GAME.Camera({
+	follow: [[global.player1, 2], global.player2]
 });
 </code>
-<code class="prettyprint">// same result as above, but this time using fractions
-GAME.camera.create({
-	follow: [
-		[global.player1, 0.66],
-		[global.player2, 0.33]
-	]
+
+<p>Same weighting as above, but this time using fractions.</p>
+<code class="prettyprint">new GAME.Camera({
+	follow: [[global.player1, 0.66], [global.player2, 0.33]]
 });</code>
 
+<br/><hr/><h2>Public Methods</h2>
 
 <!--
 -->
-<h3 id="update">GAME.camera.update()</h3>
+<h3 id="destroy">destroy()</h3>
 <p>
-	Updates the cameras; their positions, bounds, etc. This is done internally
+	Destroys the given camera.
+</p>
+<code class="prettyprint">camera.destroy();</code>
+
+<!--
+-->
+<h3 id="update">update()</h3>
+<p>
+	Updates the camera; their positions, bounds, etc. This is done internally
 	at the end of the step event but before the draw event. You shouldn't need
 	to use this function except in very specific circumstances (like mid-step
 	and you're doing something that requires updated camera bounds, etc.)
 </p>
-<code class="prettyprint">GAME.camera.update();</code>
+<code class="prettyprint">camera.update();</code>
+
+<br/><hr/><h2>Static Methods</h2>
+
+<!--   -->
+<h3 id="destroyAllCameras">destroyAllCameras()</h3>
+<p>
+	Destroys all cameras.
+</p>
+<code class="prettyprint">GAME.Camera.destroyAllCameras();</code>
+
+<!--   -->
+<h3 id="updateAllCameras">updateAllCameras()</h3>
+<p>
+	Updates all cameras.
+</p>
+<code class="prettyprint">GAME.Camera.updateAllCameras();</code>
 
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

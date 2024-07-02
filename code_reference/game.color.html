@@ -5,12 +5,13 @@
 </head>
 <body>
 
-<h1>GAME.color</h1>
+<h1>GAME.Color</h1>
 
-<p>The GAME.color object contains functions for dealing with colors.</p>
+<p>The GAME.Color object contains functions for dealing with colors.</p>
 
 <h2>Contents:</h2>
 <ul>
+	<li><h4>Static Methods</h4></li>
 	<li><a href="#hexToRgb">hexToRgb()</a></li>
 	<li><a href="#componentToHex">componentToHex()</a></li>
 	<li><a href="#rgbToHex">rgbToHex()</a></li>
@@ -18,7 +19,7 @@
 
 <!--
 -->
-<h3 id="hexToRgb">GAME.color.hexToRgb(hex)</h3>
+<h3 id="hexToRgb">hexToRgb(hex)</h3>
 <p>Takes a hex value represented as a string and returns an object contained the separated RGB components. A hex value would be as such: "#FF00FF". Returns null if the value provided is not valid.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -26,24 +27,24 @@
 </ul>
 <code class="prettyprint">// The following code returns an object the looks like this:
 // { r: 255, g: 0, b: 255 }
-var colorAsRgb = GAME.color.hexToRgb( "#FF00FF" );</code>
+var colorAsRgb = GAME.Color.hexToRgb("#FF00FF");</code>
 
 
 <!--
 -->
-<h3 id="componentToHex">GAME.color.componentToHex(c)</h3>
+<h3 id="componentToHex">componentToHex(c)</h3>
 <p>Takes a color component; R, G or B, and returns its hex value without the hash, such as "00" or "FF".</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>hex</b> - String represented hex value.</li>
 </ul>
 <code class="prettyprint">// Where's the hexit?
-var red = GAME.color.componentToHex( 255 ); // red = "FF"</code>
+var red = GAME.Color.componentToHex(255); // red = "FF"</code>
 
 
 <!--
 -->
-<h3 id="rgbToHex">GAME.color.rgbToHex(r, g, b)</h3>
+<h3 id="rgbToHex">rgbToHex(r, g, b)</h3>
 <p>Takes a paremeter for each component of a color and returns the complete hex value as a string.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -52,7 +53,7 @@ var red = GAME.color.componentToHex( 255 ); // red = "FF"</code>
 	<li><b>b</b> - The blue component.</li>
 </ul>
 <code class="prettyprint">// convert components to a single hex value
-var hex = GAME.color.rgbToHex( 0, 128, 255 ); // hex = "#0080FF"</code>
+var hex = GAME.Color.rgbToHex( 0, 128, 255 ); // hex = "#0080FF"</code>
 
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

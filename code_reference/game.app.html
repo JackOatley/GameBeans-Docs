@@ -5,28 +5,42 @@
 </head>
 <body>
 
-<h1>GAME.app</h1>
+<h1>GAME.App</h1>
 
 <p>
-	The GAME.app object contains functions for dealing with the application as
-	a whole.
+	The GAME.app object contains functions for dealing with the application
+	as a whole.
 </p>
 
 <h2>Contents:</h2>
 <ul>
+	<li><a href="#setCaption">setCaption()</a></li>
 	<li><a href="#setCursor">setCursor()</a></li>
+	<li><a href="#restart">restart()</a></li>
 </ul>
 
-<h3 id="setCursor">GAME.app.setCursor( cursor )</h3>
+<h3 id="setCaption">GAME.App.setCaption(name)</h3>
 <p>Sets the cursor, while mouse is over the game in the browser.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>name</b> - The name to appear in the window/browser tab.</li>
+</ul>
+<code class="prettyprint">GAME.App.setCaption("My Game");</code>
+
+<h3 id="setCursor">GAME.App.setCursor(cursor)</h3>
+<p>Sets the cursor, while mouse is over the game in the browser.
+See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor" target="_blank">
+MDN Web Docs</a> for a full list of
+options.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>cursor</b> - The name of the cursor to use.</li>
 </ul>
-<code class="prettyprint">// don't point at me!
-GAME.app.setCursor("pointer");</code>
-<h4>Further:</h4>
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/cursor</a>
+<code class="prettyprint">GAME.App.setCursor("pointer");</code>
+
+<h3 id="restart">GAME.App.restart(cursor)</h3>
+<p>Restarts the game.</p>
+<code class="prettyprint">GAME.App.restart();</code>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

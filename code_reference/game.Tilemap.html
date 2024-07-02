@@ -7,22 +7,24 @@
 
 <h1>GAME.Tilemap</h1>
 <p>
-	GAME.Tilemap is a class object, and so is used as a constructor. A tilemap
-	is used to render a map made up of tiles from a single sheet/texture atlas
-	(as a Sprite resource).
+	A Tilemap is used to render a map made up of tiles from a single sheet/texture atlas (as a Sprite resource).
+</p><p>
+	Tiles can be placed on any number of named layers and these can be drawn in any order you wish.
 </p>
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#constructor">GAME.Tilemap()</a></li>
-	<li><a href="#create">GAME.Tilemap.create</a></li>
-	<li><a href="#set">GAME.Tilemap.set</a></li>
-	<li><a href="#draw">GAME.Tilemap.draw</a></li>
+	<li><h4>Constructors</h4></li>
+	<li><a href="#constructor">Tilemap</a></li>
+	<li><h4>Public Methods</h4></li>
+	<li><a href="#create">create</a></li>
+	<li><a href="#set">set</a></li>
+	<li><a href="#draw">draw</a></li>
 </ul>
 
 <!--
 -->
-<h3 id="constructor">GAME.Tilemap(options)</h3>
+<h3 id="constructor">Tilemap(options)</h3>
 <p>Creates a new tilemap.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -38,37 +40,20 @@
 		<li><b>mapHeight</b> - How many tiles high the Tilemap should be.</li>
 	</ul>
 </ul>
-<code class="prettyprint">// Setup tilemap
-global.tilemap = new GAME.Tilemap({
+<code class="prettyprint">this.tilemap = new GAME.Tilemap({
 	atlas: sprTiles,
 	tileWidth: 16,
 	tileHeight: 16,
 	tileOverlay: 4,
 	tilesWide: 6,
-	mapWidth: global.map.width,
-	mapHeight: global.map.height
+	mapWidth: rmMap.width,
+	mapHeight: rmMap.height
 });</code>
 
 
 <!--
 -->
-<h3 id="create">GAME.Tilemap.create(options)</h3>
-<p>See Constructor for details.</p>
-<code class="prettyprint">// Setup tilemap
-global.tilemap = GAME.Tilemap.create({
-	atlas: sprTiles,
-	tileWidth: 16,
-	tileHeight: 16,
-	tileOverlay: 4,
-	tilesWide: 6,
-	mapWidth: global.map.width,
-	mapHeight: global.map.height
-});</code>
-
-
-<!--
--->
-<h3 id="set">GAME.Tilemap.set(layer, x, y, index)</h3>
+<h3 id="set">set(layer, x, y, index)</h3>
 <p>Sets a cell in a Tilemap.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -77,16 +62,13 @@ global.tilemap = GAME.Tilemap.create({
 	<li><b>y</b> - The Y grid position to place this tile.</li>
 	<li><b>index</b> - The tile index.</li>
 </ul>
-<code class="prettyprint">// Set a tile, method
-global.tilemap.set("ground", 5, 5, 18);
-
-// Set a tile, static function
-GAME.Tilemap.set(global.tilemap, "ground", 5, 5, 18);</code>
+<code class="prettyprint">this.tilemap.set("ground", 5, 5, 18);
+</code>
 
 
 <!--
 -->
-<h3 id="draw">GAME.Tilemap.draw(options)</h3>
+<h3 id="draw">draw(options)</h3>
 <p>Draw the Tilemap. An area of the Tilemap can be specified allowing easy selective rendering, though typically this will be the same as the camera viewing area.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -99,17 +81,13 @@ GAME.Tilemap.set(global.tilemap, "ground", 5, 5, 18);</code>
 		<li><b>bottom</b> - The bottom of the view box.</li>
 	</ul>
 </ul>
-<code class="prettyprint">// Draw the tile map
-global.tilemap.draw({
+<code class="prettyprint">this.tilemap.draw({
 	order: ["water", "ground", "buildings"],
-	left: global.camera.left,
-	right: global.camera.right,
-	top: global.camera.top,
-	bottom: global.camera.bottom
+	left: camera.left,
+	right: camera.right,
+	top: camera.top,
+	bottom: camera.bottom
 });
-
-// Via static function
-GAME.Tilemap.draw(global.tilemap, sameOptionsAsAbove);
 </code>
 
 

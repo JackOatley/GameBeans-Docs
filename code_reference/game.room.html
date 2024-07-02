@@ -11,8 +11,10 @@
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#constructor">GAME.Room</a></li>
-	<li><a href="#create">create</a></li>
+	<li><h4>Constructors</h4></li>
+	<li><a href="#constructor">Room</a></li>
+	<li><h4>Public Methods</h4></li>
+	<li><h4>Static Methods</h4></li>
 	<li><a href="#enter">enter</a></li>
 	<li><a href="#next">next</a></li>
 	<li><a href="#previous">previous</a></li>
@@ -24,7 +26,7 @@
 
 <!--
 -->
-<h3 id="constructor">GAME.Room(name, width, height)</h3>
+<h3 id="constructor">Room(name, width, height)</h3>
 <p>Create a new room.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -36,19 +38,9 @@
 var newRoom = new GAME.Room("rmNewRoom", 640, 480);
 </code>
 
-
 <!--
 -->
-<h3 id="create">GAME.Room.create(name, width, height)</h3>
-<p>See Constructor for details.</p>
-<code class="prettyprint">// Create a new room.
-const newRoom = GAME.Room.create("rmNewRoom", 640, 480);
-</code>
-
-
-<!--
--->
-<h3 id="enter">GAME.Room.enter(room, options)</h3>
+<h3 id="enter">enter(options)</h3>
 <p>Goes to the given room.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -58,14 +50,7 @@ const newRoom = GAME.Room.create("rmNewRoom", 640, 480);
 		<li><b>transition</b> - Automatically creates a transition and handles the room change callback. Takes an object with properties matching that of GAME.Transition.</li>
 		</ul>
 </ul>
-<code class="prettyprint">// Go to another room.
-GAME.Room.enter(rmLevel2);
-
-// As method
-rmLevel2.enter();
-
-// With transition
-GAME.Room.enter(rmLevel2, {
+<code class="prettyprint">rmLevel2.enter({
 	transition: {
 		type: "fade",
 		time: 60
@@ -75,33 +60,28 @@ GAME.Room.enter(rmLevel2, {
 
 <!--
 -->
-<h3 id="next">GAME.Room.next()</h3>
+<h3 id="next">next()</h3>
 <p>Goes to the next room, meaning the room after placed after the current one in the resource tree.</p>
-<code class="prettyprint">// Go to the next room.
-GAME.Room.next();</code>
+<code class="prettyprint">GAME.Room.next();</code>
 
 
 <!--
 -->
-<h3 id="previous">GAME.Room.previous()</h3>
+<h3 id="previous">previous()</h3>
 <p>Goes to the previous room, meaning the room after placed before the currentone in the resource tree.</p>
-<code class="prettyprint">// Go to the previous room
-GAME.Room.previous();
+<code class="prettyprint">GAME.Room.previous();
 </code>
 
 
 <!--
 -->
-<h3 id="setBackground">GAME.Room.setBackground(room, sprite)</h3>
-<p>Sets the sprite to use as the background from the given room.</p>
+<h3 id="setBackground">setBackground(sprite)</h3>
+<p>Sets the sprite to use as the background for the room.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>room</b> - The room to change the background of.</li>
 	<li><b>sprite</b> - The sprite to use as the background.</li>
 </ul>
-<code class="prettyprint">// Change the background.
-const room = GAME.Room.current;
-GAME.Room.setBackground(room, sprBackground2);</code>
+<code class="prettyprint">rmLevel.setBackground(sprBackground2);</code>
 
 
 <!--

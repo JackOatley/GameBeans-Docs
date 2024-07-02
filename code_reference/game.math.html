@@ -5,63 +5,87 @@
 </head>
 <body>
 
-<h1>GAME.math</h1>
+<h1>GAME.Maths</h1>
 
 <p>
-	The GAME.math object contains constants and functions for dealing with math.
+	The GAME.Maths object contains constants and functions for dealing with math, some functions are just copied from the JavaScript Math object
+	but a lot are unique. Rationale behind using Maths over Math is that Math is already used by JavaScript.
 </p>
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#randomInt">randomInt</a></li>
-	<li><a href="#choose">choose</a></li>
-	<li><a href="#lengthDirX">lengthDirX</a></li>
-	<li><a href="#lengthDirX">lengthDirY</a></li>
-	<li><a href="#pointDistance">pointDistance</a></li>
-	<li><a href="#pointDirection">pointDirection</a></li>
-	<li><a href="#angleDifference">angleDifference</a></li>
-	<li><a href="#cos">cos</a></li>
-	<li><a href="#cos">sin</a></li>
-	<li><a href="#cos">sign</a></li>
+	<li><a href="#angleDifference">angleDifference()</a></li>
+	<li><a href="#chance">chance()</a></li>
+	<li><a href="#choose">choose()</a></li>
+	<li><a href="#clamp">clamp()</a></li>
+	<li><a href="#lengthDir">lengthDir()</a></li>
+	<li><a href="#lengthDir">lengthDirX()</a></li>
+	<li><a href="#lengthDir">lengthDirY()</a></li>
+	<li><a href="#pointDistance">pointDistance()</a></li>
+	<li><a href="#pointDirection">pointDirection()</a></li>
+	<li><a href="#randomInt">randomInt()</a></li>
 	<br/>
-	<li><a href="#PI">PI</a></li>
 	<li><a href="#RADTODEG">DEGTORAD</a></li>
 	<li><a href="#RADTODEG">RADTODEG</a></li>
 </ul>
 
-<h3 id="randomInt">GAME.math.randomInt(min, max)</h3>
-<p>Returns a random integer within the given range. Both values in this function are inclusive, so if you enter 5 and 9 as min and max respectively, then both those values are possible return values.</p>
+<h3 id="angleDifference">GAME.Maths.angleDifference(angle1, angle2)</h3>
+<p>Returns the difference, in degrees, between 2 angles. This value can range from -180 to 180.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>min</b> - The min value in the range.</li>
-	<li><b>max</b> - The max value in the range.</li>
+	<li><b>angle1</b> - The first angle.</li>
+	<li><b>angle2</b> - The second angle.</li>
 </ul>
-<code class="prettyprint">// pick a number between 0 and 30
-let number = GAME.math.randomInt(0, 30);</code>
+<p>Gradually turn to face an enemy.</p>
+<code class="prettyprint">const direction = GAME.Maths.pointDirection(this.x, this.y, enemy.x, enemy.y);
+const facing = Math.sign(GAME.Maths.angleDifference(this.rotation, direction));
+this.rotation += facing;</code>
 
+<h3 id="chance">GAME.Maths.chance(probability)</h3>
+<p>Returns true with the given probability.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>probability</b> - The chance to return true: between 0 > 1.</li>
+</ul>
+<code class="prettyprint">if (GAME.Maths.chance(0.5)) {
+	console.log("You had a 50% chance of seeing this!");
+}</code>
 
-<h3 id="choose">GAME.math.choose( ...params )</h3>
+<h3 id="choose">GAME.Maths.choose(...params)</h3>
 <p>This function takes an arbitrary number of parameters and returns just one of them, chosen at random.</p>
-<code class="prettyprint">// What's for tea?
-let tea = GAME.math.choose("burgers", "pie", "fish", "kale", "friendly bacteria");
-if (tea === "kale" || tea === "friendly bacteria")
-	console.error("ERROR: This stuff ain't edible!");
+<code class="prettyprint">const food = GAME.Maths.choose("burgers", "pie", "fish", "kale");
+console.log(food);	// Will print one of the above.
 </code>
 
+<h3 id="clamp">GAME.Maths.clamp(number, min, max)</h3>
+<p>Returns the given number clamped between a min and max value.</p>
+<h4>Parameters:</h4>
+<ul>
+	<li><b>number</b> - Any number.</li>
+	<li><b>min</b> - The minimum value allowed to return.</li>
+	<li><b>mac</b> - The maximum value allowed to return.</li>
+</ul>
+<code class="prettyprint">GAME.Maths.clamp(4, 0, 10);	// Returns 4.
+GAME.Maths.clamp(-5, 0, 10);	// Returns 0.
+GAME.Maths.clamp(15, 0, 10);	// Returns 10.</code>
 
-<h3 id="lengthDirX">GAME.math.lengthDirX(len, dir)<br/>GAME.math.lengthDirY(len, dir)</h3>
-<p>These functions return the X and Y positions respectively, from 0, of a point at the specified distance away in the given direction.</p>
+<h3 id="lengthDir">GAME.Maths.lengthDir(len, dir)<br>GAME.Maths.lengthDirX(len, dir)<br/>GAME.Maths.lengthDirY(len, dir)</h3>
+<p>These functions return the X and Y positions, from 0, of a point at the specified distance away in the given direction.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>len</b> - The length/distance from 0 of the new point.</li>
 	<li><b>dir</b> - The direction in which the "len" reaches out, in degrees.</li>
 </ul>
-<code class="prettyprint">// movement
-this.x += GAME.math.lengthDirX(2, this.rotation);
-this.y += GAME.math.lengthDirY(2, this.rotation);</code>
+<p>Some simple movement code.</p>
+<code class="prettyprint">this.x += GAME.Maths.lengthDirX(2, this.rotation);
+this.y += GAME.Maths.lengthDirY(2, this.rotation);</code>
+<p>Same as above using to function that returns an array of both coordiantes.</p>
+<code class="prettyprint">const [x, y] = GAME.Maths.lengthDir(2, this.rotation);
+this.x += x;
+this.y += y;</code>
 
 
-<h3 id="pointDistance">GAME.math.pointDistance(x1, y1, x2, y2)</h3>
+<h3 id="pointDistance">GAME.Maths.pointDistance(x1, y1, x2, y2)</h3>
 <p>Returns the distance between 2 points.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -70,12 +94,10 @@ this.y += GAME.math.lengthDirY(2, this.rotation);</code>
 	<li><b>x2</b> - The X position of the second point.</li>
 	<li><b>y2</b> - The Y position of the second point.</li>
 </ul>
-<code class="prettyprint">// how far away is the moon?
-var distance = GAME.math.pointDistance(earth.x, earth.y, moon.x, moon.y);
-// It's 384,400 km, btw.</code>
+<code class="prettyprint">const distance = GAME.Maths.pointDistance(earth.x, earth.y, moon.x, moon.y);	// It's 384,400 km, btw.</code>
 
 
-<h3 id="pointDirection">GAME.math.pointDirection(x1, y1, x2, y2)</h3>
+<h3 id="pointDirection">GAME.Maths.pointDirection(x1, y1, x2, y2)</h3>
 <p>Returns the direction, in degrees, between 2 points. As a reference; 0 is right, 90 is down, 180 is left and 270 is up.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -84,45 +106,29 @@ var distance = GAME.math.pointDistance(earth.x, earth.y, moon.x, moon.y);
 	<li><b>x2</b> - The X position of the second point.</li>
 	<li><b>y2</b> - The Y position of the second point.</li>
 </ul>
-<code class="prettyprint">// in which direction is my quest? those 20 arbitrary badguys won't kill themselves!
-var direction = GAME.math.pointDirection(player.x, player.y, quest.x, quest.y);</code>
+<p>Return the direction from the player to a quest.</p>
+<code class="prettyprint">const direction = GAME.Maths.pointDirection(player.x, player.y, quest.x, quest.y);</code>
 
-
-<h3 id="angleDifference">GAME.math.angleDifference(angle1, angle2)</h3>
-<p>Returns the difference, in degrees, between 2 angles. This value can range from -180 to 180.</p>
+<h3 id="randomInt">GAME.Maths.randomInt(min, max)</h3>
+<p>Returns a random integer within the given range. Both values in this function are inclusive, so if you enter 5 and 9 as min and max respectively,
+	then both those values are possible return values.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>angle1</b> - The first angle.</li>
-	<li><b>angle2</b> - The second angle.</li>
+	<li><b>min</b> - The min value in the range.</li>
+	<li><b>max</b> - The max value in the range.</li>
 </ul>
-<code class="prettyprint">// Turn and face the enemy!
-var direction = GAME.math.pointDirection(this.x, this.y, enemy.x, enemy.y);
-var facing = Math.sign(GAME.math.angleDifference(this.rotation, direction));
-this.rotation += facing;</code>
+<p>Pick a number between 0 and 30.</p>
+<code class="prettyprint">let number = GAME.Maths.randomInt(0, 30);</code>
 
-
-<h3 id="cos">GAME.math.cos<br/>GAME.math.sin<br/>GAME.math.sign</h3>
-<p>Functions, all the same as their counterparts in the Math library.</p>
-<h4>Further:</h4>
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math</a>
-
-
-<h3 id="PI">GAME.math.PI</h3>
-<p>Variable that has the value of pi. Same as Math.PI.</p>
-<code class="prettyprint">// i like pi
-const pi = GAME.math.PI;
-const morePi = Math.PI;</code>
-
-
-<h3 id="RADTODEG">GAME.math.RADTODEG<br/>GAME.math.DEGTORAD</h3>
+<h3 id="RADTODEG">GAME.Maths.RADTODEG<br/>GAME.Maths.DEGTORAD</h3>
 <p>Variables used to convert between radians and degrees. The value of RADTODEG is (180 / PI) and the value of DEGTORAD is (PI / 180).</p>
-<code class="prettyprint">// Convert radians to degrees.
-const radians = 1.5708;
-const degrees = radians * GAME.math.RADTODEG; // 90
+<p>Convert radians to degrees.</p>
+<code class="prettyprint">const radians = 1.5708;
+const degrees = radians * GAME.Maths.RADTODEG; // 90</code>
 
-// convert degrees to radians
-const degrees = 90;
-const radians = degrees * GAME.math.DEGTORAD; // 1.5708</code>
+<p>Convert degrees to radians.</p>
+<code class="prettyprint">const degrees = 90;
+const radians = degrees * GAME.Maths.DEGTORAD; // 1.5708</code>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

@@ -10,16 +10,21 @@
 
 <h2>Contents:</h2>
 <ul>
+	<li><h4>Constructors</h4></li>
+	<li><a href="#constructor">Sound</a></li>
+	<li><h4>Public Methods</h4></li>
 	<li><a href="#play">play</a></li>
 	<li><a href="#stop">stop</a></li>
+	<li><h4>Static Methods</h4></li>
 	<li><a href="#getByName">getByName</a></li>
 </ul>
 
-<h3 id="play">GAME.sound.play(snd, options)</h3>
+<h3 id="constructor">Sound(options)</h3>
+
+<h3 id="play">play(options)</h3>
 <p>Plays a sound. By default the sound will play just once, using the options object lets you set a sound to loop as well as other features!</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>snd</b> - The name or object of the sound to play.</li>
 	<li><b>options</b> - OPTIONAL. An object containing advanced options.
 	<ul>
 		<li><b>loop</b> - Whether the sound should loop when it ends.</li>
@@ -28,16 +33,18 @@
 	</li>
 </ul>
 <h4>Returns:</h4>
-<p>Audio Node - The audio node about to be played. HTML5 only allows a single audio node to be played at a time, due to this, GameBeans creates new nodes as needed. As such, the node returned may not always be the same one.</p>
-<code class="prettyprint">// 1, 2... 1, 2, 3, 4!
-GAME.sound.play(sndSickBeat, {loop: true});
+<p>
+	Audio Node - The audio node about to be played.
+	HTML5 only allows a single audio node to be played at a time, due to this, GameBeans creates new nodes as needed.
+	As such, the node returned may not always be the same one.
+</p>
+<code class="prettyprint">sndMusic.play({loop: true});
 </code>
 
-<h3 id="loop">GAME.sound.loop(snd, options)</h3>
+<h3 id="loop">loop(options)</h3>
 <p>Plays a sound on a loop.</p>
 <h4>Parameters:</h4>
 <ul>
-	<li><b>snd</b> - The name or object of the sound to play.</li>
 	<li><b>options</b> - OPTIONAL. An object containing advanced options.
 	<ul>
 		<li><b>onEnd</b> - A function to execute when the sound ends.</li>
@@ -45,42 +52,38 @@ GAME.sound.play(sndSickBeat, {loop: true});
 	</li>
 </ul>
 <h4>Returns:</h4>
-<p>Audio Node - The audio node about to be played. HTML5 only allows a single audio node to be played at a time, due to this, GameBeans creates new nodes as needed. As such, the node returned may not always be the same one.</p>
+<p>
+	Audio Node - The audio node about to be played.
+	HTML5 only allows a single audio node to be played at a time, due to this, GameBeans creates new nodes as needed.
+	As such, the node returned may not always be the same one.
+</p>
 <code class="prettyprint">// Play an intro, leading to a loop.
-GAME.sound.play(sndIntro, {
-	onEnd: () => GAME.sound.loop(sndMainLoop)
+sndIntro.play({
+	onEnd: () => sndMainLoop.loop()
 });</code>
 
-<h3 id="stop">GAME.sound.stop(snd)</h3>
+<h3 id="stop">stop()</h3>
 <p>Stops all instance of the given sound.</p>
-<h4>Parameters:</h4>
-<ul>
-	<li><b>snd</b> - The name or object of the sound to stop.</li>
-	</li>
-</ul>
 <h4>Returns:</h4>
 <p>Undefined.</p>
-<code class="prettyprint">// start playung music
-GAME.sound.play(sndMusic);
+<code class="prettyprint">sndMusic.play();
 
 // In 10 seconds, stop the music.
 setTimeout(() => {
-	GAME.sound.stop(sndMusic);
+	sndMusic.stop();
 }, 10 * 1000);</code>
 
 
-<h3 id="getByName">GAME.sound.getByName(name)</h3>
-<p>Returns the sound resource object from the given name. This object grants direct access to the audio nodes creates when playing the sound.</p>
+<h3 id="getByName">GAME.Sound.getByName(name)</h3>
+<p>Returns the Sound with the given name. This object grants direct access to the audio nodes creates when playing the sound.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>snd</b> - The name of the sound to get the object of.</li>
-	</li>
 </ul>
 <h4>Returns:</h4>
 <p>Object - sound resource.</p>
-<code class="prettyprint">// Select a track by name.
-const track = "sndTrack" + trackNumber;
-const soundObject = GAME.sound.getByName(track);</code>
+<code class="prettyprint">const track = "sndTrack" + trackNumber;
+const soundObject = GAME.Sound.getByName(track);</code>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

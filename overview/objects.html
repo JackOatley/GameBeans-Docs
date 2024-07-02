@@ -8,19 +8,31 @@
 	
 	<body>
 	
-		<h1>Objects</h1>
+		<h1>GameObjects</h1>
 		
-		<p>Objects are the highest level form of control you have for creating games in GameBeans. They can control and help manage anything. An Object can be the player character, a pickup, an enemy, a HUD element, or something invisible that handles some aspect of your game such as enemy spawning, etc.</p>
+		<p>
+			GameObjects are the highest level form of control you have for creating games in GameBeans. They can control and help manage anything.
+			A GameObject can be the player character, a pickup, an enemy, a HUD element, or something invisible that handles some aspect of your game
+			such as enemy spawning, etc.
+		</p>
 		
-		<p>Objects can be given a Sprite that is displayed automatically when placed in a room. An Object placed in a room is known as an "Instance", as in "an instance of an object". You can have 1 or many Instances of a single Object. Instances inherit everything from the Object they are an Instance of, but act independently after creation.</p>
+		<p>
+			GameObjects can be given a Sprite that is displayed automatically when placed in a room. A GameObject placed in a room is known as an "Instance",
+			as in "an instance of a GameObject". You can have 1 or many Instances of a single GameObject. Instances inherit everything from the GameObject
+			they are an Instance of, but act independently after creation.
+		</p>
 		
-		<p>Selecting an Object from the resource tree opens it up in the Object Editor. Here's you can set it's Sprite and various other properties. Events and Actions can also be assigned to the Object here, they are found in the Context menu on the left.</p>
+		<p>
+			Selecting a GameObject from the resource tree opens it up in the GameObject Editor. Here's you can set it's Sprite and various other properties.
+			Behaviours, Events and Actions can also be assigned to the GameObject here, they are found in the Context menu on the left.</p>
 		
 		<h4>Parameters:</h4>
-		<p>All objects have the following built in properties. These can be set with the "Set Variable" action, or in code using the "this" keyword.</p>
+		<p>
+			All GameObject instances have the following built in properties. These can be set with the "Set Variable" action, or in code using the "this" keyword.
+		</p>
 		<ul>
-			<li><b>sprite</b> - The object's sprite.</li>
-			<li><b>visible</b> - Whether the object starts visible.</li>
+			<li><b>sprite</b> - The GameObject's sprite.</li>
+			<li><b>visible</b> - Whether instances of this GameObject start visible.</li>
 			<li><b>depth</b> - Determines drawing order.</li>
 			<li><b>solid</b> - NA. Defines this object as solid, for use in collisions.</li>
 			<li><b>scaleX</b> - Horizontal scaling factor of the sprite.</li>
@@ -28,9 +40,9 @@
 			<li><b>rotation</b> - Angle of the sprite.</li>
 			<li><b>terminal</b> - NA. The maximum speed allowed by gravity.</li>
 			<li><b>gravity</b> - The gravity gain.</li>
-			<li><b>gravityDirection</b> - Direction to which gravity pulls.</li>
-			<li><b>speed</b> - Speed the object is moving.</li>
-			<li><b>direction</b> - Direction the object is moving in.</li>
+			<li><b>gravityDirection</b> - Direction to which gravity pulls the instance.</li>
+			<li><b>speed</b> - Speed that the instance is moving.</li>
+			<li><b>direction</b> - Direction the instance is moving in.</li>
 			<li><b>speedX</b> - Horizontal speed.</li>
 			<li><b>speedY</b> - Vertical speed.</li>
 			<li><b>boxTop</b> - Y position for the top of the bounding box.</li>

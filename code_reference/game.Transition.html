@@ -33,12 +33,11 @@
 		<li><b>prefab</b> - A previously created object that overwrites provided parameters.</li>
 		</ul>
 </ul>
-<code class="prettyprint">// Go to another room
-new GAME.Transition({
+<code class="prettyprint">new GAME.Transition({
 	type: "fade",
 	time: 60,
 	callback: function() {
-		GAME.room.enter("rmLevel12");
+		rmLevel12.enter();
 	}
 });</code>
 
