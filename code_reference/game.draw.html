@@ -5,42 +5,37 @@
 </head>
 <body>
 
-<h1>GAME.draw</h1>
+<h1>Draw</h1>
 
-<p>The GAME.draw object contains functions for drawing onto the canvas.</p>
+<p>
+	The Draw object contains functions for drawing onto the canvas.
+</p>
 
-<h2>Contents:</h2>
+<br/><hr/><h2>Contents:</h2>
 <ul>
-	<li><a href="#self">self()</a></li>
-	<li><a href="#sprite">sprite()</a></li>
-	<li><a href="#canvas">canvas()</a></li>
-	<li><a href="#setColor">setColor()</a></li>
-	<li><a href="#setFont">setFont()</a></li>
-	<li><a href="#setImageSmoothing">setImageSmoothing()</a></li>
-	<li><a href="#text">text()</a></li>
-	<li><a href="#save">save()</a></li>
-	<li><a href="#save">restore()</a></li>
-	<li><a href="#save">reset()</a></li>
-	<li><a href="#getTarget">getTarget()</a></li>
-	<li><a href="#setTarget">setTarget()</a></li>
-	<li><a href="#resetTarget">resetTarget()</a></li>
+	<li><h4>Static Methods</h4></li>
+	<li><a href="#sprite">sprite</a></li>
+	<li><a href="#canvas">canvas</a></li>
+	<li><a href="#setColor">setColor</a></li>
+	<li><a href="#setFont">setFont</a></li>
+	<li><a href="#setImageSmoothing">setImageSmoothing</a></li>
+	<li><a href="#text">text</a></li>
+	<li><a href="#save">save</a></li>
+	<li><a href="#save">restore</a></li>
+	<li><a href="#save">reset</a></li>
+	<li><a href="#getTarget">getTarget</a></li>
+	<li><a href="#setTarget">setTarget</a></li>
+	<li><a href="#resetTarget">resetTarget</a></li>
+	<li><h4>Static Properties</h4></li>
+	<li><a href="#context">context</a></li>
+	<li><a href="#color">color</a></li>
 </ul>
+
+<br/><hr/><h2>Static Methods</h2>
 
 <!--
 -->
-<h3 id="self">GAME.draw.self(inst)</h3>
-<p>Draws the given instance using it's normal drawing parameters, excluding it's draw events. This includes it's assigned sprite, position, rotation and scaling.</p>
-<h4>Parameters:</h4>
-<ul>
-	<li><b>inst</b> - The instance object to draw.</li>
-</ul>
-<code class="prettyprint">// draw the calling instance
-GAME.draw.self(this);</code>
-
-
-<!--
--->
-<h3 id="sprite">GAME.draw.sprite(spr, index, x, y, sX, sY, rot)</h3>
+<h3 id="sprite">sprite(spr, index, x, y, sX, sY, rot)</h3>
 <p>Draws a sprite using the given parameters.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -52,13 +47,12 @@ GAME.draw.self(this);</code>
 	<li><b>sY</b> - The vertical scaling of the sprite.</li>
 	<li><b>rot</b> - The rotation of the sprite.</li>
 </ul>
-<code class="prettyprint">// Show some love!
-GAME.draw.sprite(sprHeart, 0, 320, 240, 2, 2, 45);</code>
+<code class="prettyprint">GAME.Draw.sprite(sprHeart, 0, 320, 240, 2, 2, 45);</code>
 
 
 <!--
 -->
-<h3 id="canvas">GAME.draw.canvas( canvas, x, y )</h3>
+<h3 id="canvas">canvas(canvas, x, y)</h3>
 <p>Draws a canvas using the given parameters.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -66,34 +60,33 @@ GAME.draw.sprite(sprHeart, 0, 320, 240, 2, 2, 45);</code>
 	<li><b>x</b> - The X position to draw the canvas.</li>
 	<li><b>y</b> - The Y position to draw the canvas.</li>
 </ul>
-<code class="prettyprint">// Draw a canvas.
-GAME.draw.canvas(canvas, 0, 0);</code>
+<code class="prettyprint">GAME.Draw.canvas(myCanvas, 0, 0);</code>
 
 
 <!--
 -->
-<h3 id="setColor">GAME.draw.setColor(color)</h3>
+<h3 id="setColor">setColor(color)</h3>
 <p>Sets the color to use for drawing text/shapes.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>color</b> - Can either be a string value representing a CSS color, or an object containing {r, g, b, [a]} or {h, s, l, [a]}.</li>
 </ul>
-<code class="prettyprint">GAME.draw.setColor("#FF0000");					// using CSS hex value
-GAME.draw.setColor("#FF000088");				// using CSS hex value, with alpha
-GAME.draw.setColor("rgb(255, 255, 0)");				// using CSS rgb value
-GAME.draw.setColor("rgba(255, 255, 0, 0.5)");			// using CSS rgba value
-GAME.draw.setColor("hsl(200, 50%, 75%)");			// using CSS hsl value
-GAME.draw.setColor("hsla( 200, 50%, 75%, 0.5 )");		// using CSS hsla value
-GAME.draw.setColor({r: 0, g: 255, b: 0});			// using rgb object
-GAME.draw.setColor({r: 0, g: 255, b: 0, a: 0.5});		// using rgba object
-GAME.draw.setColor({h: 200, s: 100, l: 50});			// using hsl object
-GAME.draw.setColor({h: 200, s: 100, l: 50, a: 0.5});		// using hsla object
+<code class="prettyprint">GAME.Draw.setColor("#FF0000");					// using CSS hex value
+GAME.Draw.setColor("#FF000088");				// using CSS hex value, with alpha
+GAME.Draw.setColor("rgb(255, 255, 0)");				// using CSS rgb value
+GAME.Draw.setColor("rgba(255, 255, 0, 0.5)");			// using CSS rgba value
+GAME.Draw.setColor("hsl(200, 50%, 75%)");			// using CSS hsl value
+GAME.Draw.setColor("hsla(200, 50%, 75%, 0.5)");		// using CSS hsla value
+GAME.Draw.setColor({r: 0, g: 255, b: 0});			// using rgb object
+GAME.Draw.setColor({r: 0, g: 255, b: 0, a: 0.5});		// using rgba object
+GAME.Draw.setColor({h: 200, s: 100, l: 50});			// using hsl object
+GAME.Draw.setColor({h: 200, s: 100, l: 50, a: 0.5});		// using hsla object
 </code>
 
 
 <!--
 -->
-<h3 id="setFont">GAME.draw.setFont( font, size, align, baseline )</h3>
+<h3 id="setFont">setFont( font, size, align, baseline )</h3>
 <p>Sets the font to use for drawing text with the GAME.draw.text function.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -102,25 +95,23 @@ GAME.draw.setColor({h: 200, s: 100, l: 50, a: 0.5});		// using hsla object
 	<li><b>align</b> - The horizontal alignment of the font.</li>
 	<li><b>baseline</b> - The vertical alignment of the font.</li>
 </ul>
-<code class="prettyprint">// Set the font used for drawing text.
-GAME.draw.setFont("Arial", 20, "center", "middle");</code>
+<code class="prettyprint">GAME.Draw.setFont("Arial", 20, "center", "middle");</code>
 
 
 <!--
 -->
-<h3 id="setImageSmoothing">GAME.draw.setImageSmoothing( enable )</h3>
+<h3 id="setImageSmoothing">setImageSmoothing( enable )</h3>
 <p>Enables or disables image smoothing when drawing images/sprites.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>enable</b> - Enable (true) or disable (false).</li>
 </ul>
-<code class="prettyprint">// Draw stuff smooooth.
-GAME.draw.setImageSmoothing(true);</code>
+<code class="prettyprint">GAME.Draw.setImageSmoothing(true);</code>
 
 
 <!--
 -->
-<h3 id="text">GAME.draw.text( text, x, y, [options] )</h3>
+<h3 id="text">text( text, x, y, [options] )</h3>
 <p>Draw some text to the screen at the given position. Uses the font as defined by the GAME.draw.setFont function.</p>
 <h4>Parameters:</h4>
 <ul>
@@ -134,16 +125,15 @@ GAME.draw.setImageSmoothing(true);</code>
 		<li><b>width</b> - The width of stroked text.</li>
 		<li><b>pattern</b> - A text rendering "pattern". This is useful for "type-writer" style text.</li>
 		<ul>
-			<li><b>start</b> - The index of the first character of the string to display, character before this are invisible.</li>
-			<li><b>end</b> - The index of the last character of the string to display, character before this are invisible.</li>
+			<li><b>start</b> - The index of the first character of the string to display, characters BEFORE this are invisible.</li>
+			<li><b>end</b> - The index of the last character of the string to display, characters AFTER this are invisible.</li>
 		</ul>
 	</ul>
 	</li>
 </ul>
-<code class="prettyprint">// Say howdy
-GAME.draw.text("Howdy, World!", 320, 240);
+<code class="prettyprint">GAME.Draw.text("Howdy, World!", 320, 240);
 </code><code class="prettyprint">// Using a pattern, displays "  wdy, Wor   "
-GAME.draw.text("Howdy, World!", 320, 240, {
+GAME.Draw.text("Howdy, World!", 320, 240, {
 	pattern: {
 		start: 2,
 		end: 10
@@ -213,6 +203,15 @@ GAME.draw.canvas( tempCanvas, 0, 0 );
 <h3 id="resetTarget">GAME.draw.resetTarget()</h3>
 <p>Resets the rendering target to the one used before the last setTarget.</p>
 
+<br/><hr/><h2>Public Properties</h2>
+
+<h3 id="context">context</h3>
+<p>The current rendering context. Is a CanvasRenderingContext2D.</p>
+<code class="prettyprint">const ctx = GAME.Draw.context</code>
+
+<h3 id="color">color</h3>
+<p>The current color being used when drawing things.</p>
+<code class="prettyprint">const color = GAME.Draw.color</code>
 
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>

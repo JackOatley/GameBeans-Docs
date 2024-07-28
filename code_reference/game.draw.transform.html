@@ -5,61 +5,58 @@
 </head>
 <body>
 
-<h1>GAME.draw (transformation)</h1>
-<p>The GAME.draw transform functions allow for setting the scaling, rotating and translating of all subsequent drawing.</p>
+<h1>Draw (transformation)</h1>
+<p>The Draw transform functions allow for setting the scaling, rotating and translating of all subsequent drawing.</p>
 
 <h2>Contents:</h2>
 <ul>
-	<li><a href="#scale">scale()</a></li>
-	<li><a href="#rotate">rotate()</a></li>
-	<li><a href="#translate">translate()</a></li>
-	<li><a href="#setDefault">setDefault()</a></li>
+	<li><a href="#scale">scale</a></li>
+	<li><a href="#rotate">rotate</a></li>
+	<li><a href="#translate">translate</a></li>
+	<li><a href="#setDefault">setDefault</a></li>
 </ul>
 
 <!--
 -->
-<h3 id="scale">GAME.draw.scale( sX, sY )</h3>
+<h3 id="scale">scale( sX, sY )</h3>
 <p>Adds the given horizontal and vertical scaling to the transformation.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>sX</b> - The horizontal scaling.</li>
 	<li><b>sY</b> - The vertical scaling.</li>
 </ul>
-<code class="prettyprint">// draw the calling instance, bigger
-GAME.draw.scale(2, 2);
+<code class="prettyprint">GAME.draw.scale(2, 2);
 GAME.draw.self(this);</code>
 
 
 <!--
 -->
-<h3 id="rotate">GAME.draw.rotate(rot)</h3>
+<h3 id="rotate">rotate(rot)</h3>
 <p>Adds the rotation to the transformation.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>rot</b> - The rotation, in degrees, to add.</li>
 </ul>
-<code class="prettyprint">// draw the calling instance, upside down
-GAME.draw.rotate(180);
+<code class="prettyprint">GAME.draw.rotate(180);
 GAME.draw.self(this);</code>
 
 
 <!--
 -->
-<h3 id="translate">GAME.draw.translate(x, y)</h3>
+<h3 id="translate">translate(x, y)</h3>
 <p>Adds the given x and y positions to the transformation.</p>
 <h4>Parameters:</h4>
 <ul>
 	<li><b>x</b> - The X position to add.</li>
 	<li><b>y</b> - The Y position to add.</li>
 </ul>
-<code class="prettyprint">// draw the calling instance, somewhere else
-GAME.draw.translate(100, 100);
+<code class="prettyprint">GAME.draw.translate(100, 100);
 GAME.draw.self(this);</code>
 
 
 <!--
 -->
-<h3 id="setDefault">GAME.draw.setDefault(options)</h3>
+<h3 id="setDefault">setDefault(options)</h3>
 <p>Sets the default transformation. This will be what the Draw Event sets the transform to when it resets before rendering.</p>
 <h4>Parameters:</h4>
 <ul>
